@@ -1,5 +1,8 @@
 package petroleum;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /** Classe que representa a central de distribuição de combústivel.
  * Deve conter todas as informações, como os camiões, os postos, etc.
  * É ainda responsável por controlar todos os elemenots e operações

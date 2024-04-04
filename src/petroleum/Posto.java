@@ -124,14 +124,20 @@ public class Posto {
         // TODO fazer este método
         //Teste do nosso melhor amigo
 
-		// Verificar se o posto tem capacidade para armazenar os litros indicados
-		if (quantidadeAtual + nLitros <= capacidadeMaximaCombus) {
+        if (quantidadeAtual <0.25*capacidadeMaximaCombus) {
+            return Central.ACEITE;
+        }else if (quantidadeAtual<0.75*capacidadeMaximaCombus){
+            return Central.POSTO_NAO_PRECISA;
+        }
+
+        // Verificar se o posto tem capacidade para armazenar os litros indicados
+		/*if (quantidadeAtual + nLitros <= capacidadeMaximaCombus) {
 			// Adicionar os litros ao depósito do posto
 			quantidadeAtual += nLitros;
 
 			// Verificar se a ocupação do posto é suficiente para aceitar novos pedidos de abastecimento
 			if (percentagemOcupacao() >= OCUPACAO_SUFICIENTE) {
-				return Central.ACEITE; // O pedido foi adicionado ao caminhão
+				return Central.ACEITE; // O pedido foi adicionado ao camião
 			} else {
 				return Central.POSTO_NAO_PRECISA; // O posto não necessita de ser abastecido no momento
 			}
