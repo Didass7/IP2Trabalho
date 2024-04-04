@@ -7,8 +7,60 @@ package petroleum;
 public class Central {
 
 
+	private List<Camiao> listarCamioes;
+	private List<Posto> listarPostos;
+	private int posicaoX;
+	private int posicaoY;
 
-	// constantes para os erros que podem surgir udurante a realização das operações
+	public Central(int posicaoX,int posicaoY){
+
+		this.listarCamioes = new ArrayList<>();
+		this.listarPostos = new ArrayList<>();
+		this.posicaoX=posicaoX;
+		this.posicaoY=posicaoY;
+	}
+
+	public void adicionarCamiao(Camiao camiao) {
+
+		// Verifica se a matrícula do camião já existe na lista de camiões
+		for (Camiao c : listarCamioes) {
+			// Se encontrarmos uma matrícula igual, não fazemos nada e retornamos
+			if (c.getMatricula().equals(camiao.getMatricula())) {
+				return;
+			}
+		}
+		// Se a matrícula não existir na lista, adicionamos o camião à lista
+		listarCamioes.add(camiao);
+
+	}
+
+	public void adicionarPosto(Posto posto){
+		// Verifica se o posto já existe na lista
+		if (!listarPostos.contains(posto)) {
+			listarPostos.add(posto);
+		} else {
+			System.out.println("O posto já existe na lista.");
+		}
+	}
+
+	public int getPosicaoX() {
+		return posicaoX;
+	}
+
+	public void setPosicaoX(int posicaoX) {
+		this.posicaoX = posicaoX;
+	}
+
+	public int getPosicaoY() {
+		return posicaoY;
+	}
+
+	public void setPosicaoY(int posicaoY) {
+		this.posicaoY = posicaoY;
+	}
+
+
+// constantes para os erros que podem surgir udurante a realização das operações
 	/** Correu tudo bem com a operação */
 	public static final int ACEITE = 0;
 	/** Usada quando se pretende adicionar um pedido a um posto, mas este não precisa */
@@ -26,18 +78,27 @@ public class Central {
 	 */
 	public Camiao getCamiao(String matricula ) {
 		// TODO fazer este método
-		return null;
+		for (Camiao camiao : listarCamioes) {
+			if (camiao.getMatricula().equals(matricula)) {
+				return camiao;
+			}
+		}
+		return null; // Retorna null se não encontrar nenhum camião com a matrícula especificada
 	}
 	
-	/** retorna o posto que tem um dado id
-	 * @param id id a pesquisar
+	/**
+	 * retorna o posto que tem um dado id
+	 *
 	 * @return o posto com o id, ou null se não existir
 	 */
-	public Posto getPosto( int id ) {
-		// TODO fazer este método
+	public Posto getPosto(int id) {
+		for (Posto posto : listarPostos) {
+			if (posto.getCodigoNumerico() == id) {
+				return posto;
+			}
+		}
 		return null;
 	}
-
 
 	/** processa uma entrega, isto é, associa o pedido ao camião respetivo
 	 * @param posto posto onde entregar o combústivel
@@ -51,7 +112,29 @@ public class Central {
 	 *         EXCEDE_CAPACIDADE_POSTO, se o posto não tem capacidade de armazenar os litros indicados      
 	 */
 	public int processarEntrega(Posto posto, int litros, Camiao camiao) {
-		// TODO fazer este método
+		// Verifica se o posto precisa ser abastecido
+		if (!posto.()) {
+			return POSTO_NAO_PRECISA;
+		}
+
+		// Verifica se o posto tem capacidade para armazenar os litros indicados
+		if (litros > posto.getCapacidadeMaximaCombus()) {
+			return EXCEDE_CAPACIDADE_POSTO;
+		}
+
+		// Verifica se o camião tem capacidade para armazenar os litros indicados
+		if (litros > camiao.getCapacidadeLitros()) {
+			return EXCEDE_CAPACIDADE_CAMIAO;
+		}
+
+		// Verifica se o pedido implica um tempo maior que um turno
+		if (litros / camiao.duracaoTurnoExtra() > camiao.get()) {
+			return EXCEDE_TEMPO_TURNO;
+		}
+
+		// Realiza a entrega, associando o pedido ao camião
+		camiao.(new Pedido(posto, litros));
+
 		return ACEITE;
 	}
 
