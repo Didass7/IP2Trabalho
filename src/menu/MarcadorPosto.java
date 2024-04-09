@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.geom.Point2D;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 
@@ -42,10 +43,9 @@ public class MarcadorPosto {
 	 */
 	public MarcadorPosto(Posto posto) {
 		this.posto = posto;
+
 		// TODO ver a posição do posto (não criar um novo como aqui)
-		Point pos = new Point();
-
-
+		Point pos = posto.getLocalizacao();
 
 		int offsetX = postoVerde.getIconWidth()/2;
 		int offsetY = postoVerde.getIconHeight();

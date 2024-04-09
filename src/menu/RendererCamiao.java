@@ -89,7 +89,7 @@ public class RendererCamiao implements ListCellRenderer<Camiao> {
 	public Component getListCellRendererComponent(JList<? extends Camiao> list, Camiao value, int index,
 			boolean isSelected, boolean cellHasFocus) {
 		camiao = value;
-		
+		//camiao.geMatricula
 		// TODO colocar a informação nas variáveis
 		String matricula = "AA-00-AA";
 		

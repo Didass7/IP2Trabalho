@@ -70,11 +70,14 @@ public class JanelaControlo extends JFrame {
 		central = c;
 		
 		// TODO criar os marcadores de posto, um para cada posto (ciclo?)
-		Posto p = null;
-		MarcadorPosto mp = new MarcadorPosto(p);
+		for (Posto p: Central.getPostos()){
+			MarcadorPosto mp = new MarcadorPosto(p);
+			marcadores.add( mp );
+		}
+
 		// TODO adicionar o marcador à lista e descomentar a linha seguinte 
 		//      (está em comentário para não dar NullPointerException) 
-		// marcadores.add( mp ); 
+
 		
 		inicializarInterface();
 	}
