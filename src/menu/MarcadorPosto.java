@@ -42,7 +42,7 @@ public class MarcadorPosto {
 	 */
 	public MarcadorPosto(Posto posto) {
 		this.posto = posto;
-		Point pos = new Point();
+		Point pos = posto.getLocalizacao();
 
 		// TODO ver a posição do posto (não criar um novo como aqui)
 

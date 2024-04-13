@@ -90,6 +90,7 @@ public class RendererCamiao implements ListCellRenderer<Camiao> {
 												  boolean isSelected, boolean cellHasFocus) {
 		camiao = value;
 
+		//camiao.geMatricula
 		// TODO colocar a informação nas variáveis
 		String matricula = "AA-00-AA";
 
