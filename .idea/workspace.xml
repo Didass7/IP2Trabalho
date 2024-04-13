@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54ce9548-5f8e-42ac-965e-e1f14623c052" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IP2Projeto.iml" afterDir="false" />
+    <list default="true" id="54ce9548-5f8e-42ac-965e-e1f14623c052" name="Changes" comment="ola">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arranque/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arranque/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/Mapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/Mapa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/MarcadorPosto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/MarcadorPosto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/RendererCamiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/RendererCamiao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/petroleum/Camiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Camiao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/petroleum/Central.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Central.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/petroleum/Itinerario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Itinerario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/petroleum/Paragem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Paragem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/petroleum/Posto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Posto.java" afterDir="false" />
     </list>
+    <list id="7e57f33c-a028-4ef2-a1e7-f6338726fa31" name="Changes by Diogo_Santos" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +25,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Didass7&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Didass7/IP2Trabalho.git",
+    "accountId": "f28f88d0-76c3-4b18-8c25-9865861a48ed"
+  }
+}]]></component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -40,11 +54,13 @@
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\diogo\IdeaProjects\IP2Projeto\src\menu" />
       <recent name="C:\Users\diogo\IdeaProjects\IP2Projeto" />
       <recent name="C:\Users\diogo\IdeaProjects\IP2Projeto\src" />
     </key>
@@ -58,6 +74,19 @@
       <option name="presentableId" value="Default" />
       <updated>1712246415900</updated>
     </task>
+    <task id="LOCAL-00001" summary="ola">
+      <option name="closed" value="true" />
+      <created>1712265792108</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712265792108</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ola" />
+    <option name="LAST_COMMIT_MESSAGE" value="ola" />
   </component>
 </project>

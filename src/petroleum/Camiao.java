@@ -1,6 +1,5 @@
 package petroleum;
 import java.awt.Point;
-
 import menu.Mapa;
 
 /** Esta classe representa um camião, que, neste contexto, se refere à capacidade de transportar
@@ -79,33 +78,33 @@ public class Camiao {
 	/** o tempo máximo de um turno, que são as 14 horas
 	 * (2 condutores), dadas em segundos */
 	public static final int TEMPO_TURNO = 14 * 3600;
-	
+
 	/** indica se o Camião pode acrescentar o seguinte pedido ao seu itinerário
 	 * @param posto posto que pede o abastecimento
 	 * @param litros litros que o posto pretende
 	 * @return ACEITE, se aceitar o pedido <br>
 	 *         EXCEDE_CAPACIDADE_CAMIAO, se o número de litros for superior
 	 *         ao que o camião tem disponível<br>
-	 *         EXCEDE_TEMPO_TURNO, se o pedido implicar um tempo maior que um turno      
-	 *          
+	 *         EXCEDE_TEMPO_TURNO, se o pedido implicar um tempo maior que um turno
+	 *
 	 */
 	public int podeFazerPedido(Posto posto, int litros) {
 		if (litros > this.capacidadeLivre()){
 			return Central.EXCEDE_CAPACIDADE_CAMIAO;
 		}
 		//variavel para calcular o tempo necessario para atender o pedido
-		double tempoParaPedido= tempoDespejar(litros)+ tempoPercorrer(this.itinerario)
+		//double tempoParaPedido= tempoDespejar(litros)+ tempoPercorrer;
 		// TODO implementar este método
 		return Central.ACEITE;
 	}
-	
+
 	/** adiciona um posto ao itinerário do camião, se for possível.
 	 * @param p posto que pede o abastecimento
 	 * @param litros litros que o posto pretende
 	 * @return ACEITE, se aceitar o pedido <br>
 	 *         EXCEDE_CAPACIDADE_CAMIAO, se o número de litros for superior
 	 *         ao que o camião tem disponível<br>
-	 *         EXCEDE_TEMPO_TURNO, se o pedido implicar um tempo maior que um turno      
+	 *         EXCEDE_TEMPO_TURNO, se o pedido implicar um tempo maior que um turno
 	 */
 	public int addPosto( Posto p, int litros ) {
 		// TODO fazer este método
@@ -113,13 +112,13 @@ public class Camiao {
 	}
 
 	/** retorna o tempo, em segundos, que demora a fazer o itinerário
-	 * @return o tempo, em segundos, que demora a fazer o itinerário 
+	 * @return o tempo, em segundos, que demora a fazer o itinerário
 	 */
 	public double duracaoTurno( ) {
 		// TODO fazer este método
 		return 0;
 	}
-	
+
 	/** retorna o tempo, em segundos, que demora a fazer o itinerário
 	 * acrescentando um posto extra
 	 * @param extra o posto extra a processar
@@ -148,7 +147,7 @@ public class Camiao {
 		// TODO terminar este método (distância / velocidade)
 		return Mapa.distancia(ini, fim);
 	}
-	
+
 	/** retorna quanto tempo demora, em segundos, a transferir a quantidade de liquido
 	 * @param nLitros a quantidade de liquido a transferir
 	 * @return o tempo que demora, em segundos, a transferir os nLitros
@@ -157,15 +156,15 @@ public class Camiao {
 		// TODO fazer este método
 		return 0;
 	}
-	
+
 	/** retorna a percentagem de ocupação do camião, entre 0 (0%) e 1 (100%)
-	 * @return a percentagem de ocupação 
+	 * @return a percentagem de ocupação
 	 */
 	public float percentagemOcupacao() {
 		// TODO fazer este método
 		return 0;
 	}
-	
+
 	/** retorna a capacidade livre, isto é, quantos litros ainda pode
 	 * adicionar à carga
 	 * @return a capacidade livre, em litros

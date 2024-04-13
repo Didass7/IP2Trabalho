@@ -22,16 +22,16 @@ public class RendererCamiao implements ListCellRenderer<Camiao> {
 	private static final int PIXEIS_TANQUE = 30;
 	/** a imagem a apresentar na lista */
 	private static final ImageIcon camiaoIcon = new ImageIcon( "icones/camiao_lbl.png" );
-	
+
 	private Camiao camiao;     // qual o camião a apresentar
-	
+
 	private JPanel painel;     // painel onde desenhar as infos
 	/** cor a usar para indicar que o camião está selecionado */
 	private static final Color selColor = Color.CYAN;
 	// cor a usar para indicar que o camião NÃO está selecionado (usar a do sistema)
-	private Color naoSelColor; 
+	private Color naoSelColor;
 
-	
+
 	public RendererCamiao(  ) {
 		Dimension size = new Dimension( camiaoIcon.getIconWidth(), camiaoIcon.getIconHeight() );
 		JPanel panel = new JPanel(){
@@ -50,14 +50,14 @@ public class RendererCamiao implements ListCellRenderer<Camiao> {
 		painel.add(panel);
 		painel.setBorder( new TitledBorder( "121212" ) );
 	}
-	
+
 	/** define qual o caimão a usar
 	 * @param camiao o camião a usar
 	 */
 	public void setCamiao(Camiao camiao) {
 		this.camiao = camiao;
 	}
-	
+
 	/** desenha a informação no painel de desenho
 	 * @param g ambiente onde desenhar
 	 */
@@ -70,7 +70,7 @@ public class RendererCamiao implements ListCellRenderer<Camiao> {
 		// duraçao do turno em horas e minutos
 		int duracaoHoras = 10;
 		int duracaoMinutos = 30;
-		
+
 		// apresentar as infos
 		int numPixeis = (int)(percentOcupacao * PIXEIS_TANQUE);
 		g.setColor( Color.LIGHT_GRAY );
@@ -87,12 +87,12 @@ public class RendererCamiao implements ListCellRenderer<Camiao> {
 
 	@Override
 	public Component getListCellRendererComponent(JList<? extends Camiao> list, Camiao value, int index,
-			boolean isSelected, boolean cellHasFocus) {
+												  boolean isSelected, boolean cellHasFocus) {
 		camiao = value;
-		//camiao.geMatricula
+
 		// TODO colocar a informação nas variáveis
 		String matricula = "AA-00-AA";
-		
+
 		((TitledBorder)painel.getBorder()).setTitle( matricula );
 		((TitledBorder)painel.getBorder()).setTitleColor( isSelected? Color.BLUE: Color.BLACK);
 		painel.setBackground( isSelected? selColor: naoSelColor );

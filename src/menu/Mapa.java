@@ -8,7 +8,7 @@ import java.awt.Point;
  */
 public class Mapa {
 	private static final double ESCALA = 0.38;
-	
+
 	/** calcula a distância (em quilómetros) entre dois pontos do mapa
 	 * @param p1 ponto 1
 	 * @param p2 ponto 2
