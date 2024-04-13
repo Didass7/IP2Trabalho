@@ -90,6 +90,11 @@ public class Camiao {
 	 *          
 	 */
 	public int podeFazerPedido(Posto posto, int litros) {
+		if (litros > this.capacidadeLivre()){
+			return Central.EXCEDE_CAPACIDADE_CAMIAO;
+		}
+		//variavel para calcular o tempo necessario para atender o pedido
+		double tempoParaPedido= tempoDespejar(litros)+ tempoPercorrer(this.itinerario)
 		// TODO implementar este método
 		return Central.ACEITE;
 	}
