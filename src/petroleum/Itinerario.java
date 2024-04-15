@@ -11,14 +11,30 @@ import java.util.List;
 public class Itinerario {
 
 	private List<Posto> paragens;
+	private Point pontoPartida;
+
+
 	//private int ou string pontoPartida;
+
+	public Itinerario (Point pontoPartida){
+
+		this.paragens=new ArrayList<>();
+		this.pontoPartida=pontoPartida;
+	}
+
+	public void adicionaParagem(Posto posto,int litrosParaDepositar){
+
+		Paragem paragem= new Paragem(posto,litrosParaDepositar);
+		paragens.add(paragem.getPosto());
+	}
+
 
 	/** retorna o ponto de inicio do itenerário
 	 * @return o ponto de inicio do itenerário
 	 */
 	public Point getInicio() {
 		// TODO fazer este método (não usar este valor assim)
-		return new Point(505,750);
+		return pontoPartida;
 	}
 
 	/** limpa o itinerário, isto é, remove todas
@@ -26,5 +42,6 @@ public class Itinerario {
 	 */
 	public void limpar() {
 		// TODO fazer este método
+		paragens.clear();
 	}
 }

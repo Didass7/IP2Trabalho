@@ -105,18 +105,18 @@ public class JanelaControlo extends JFrame {
 		Graphics2D ge = (Graphics2D)g.create();
 
 		// TODO ver o itinerário (não criar um novo como aqui)
-		Itinerario iti = new Itinerario(); 
-		Point p1 = iti.getInicio();  // começa no início
+		//Itinerario iti =Camiao.getItinerario();
+		//Point p1 = iti.getInicio();  // começa no início
 		// TODO para cada ponto desenhar uma linha entre esse e o anterior
 		// p1 é sempre o anterior, p2 é sempre o atual
-		for( int i=0; i < 0; i++ ){ // TODO usar o for correto
-			Point p2 = null;        // TODO próximo ponto no itinerário
-			desenhaLinha(ge, p1, p2);
-			p1 = p2;
-		}
-		Point p2 = iti.getInicio(); // e acaba no início
-		desenhaLinha( ge, p1,  p2 );
-		ge.dispose();
+		//for( int i=0; i < 0; i++ ){ // TODO usar o for correto
+		//	Point p2 = null;        // TODO próximo ponto no itinerário
+		//	desenhaLinha(ge, p1, p2);
+		//	p1 = p2;
+		//}
+		//Point p2 = iti.getInicio(); // e acaba no início
+		//desenhaLinha( ge, p1,  p2 );
+		//ge.dispose();
 	}
 
 	/** desenha uma linha entre dois pontos
@@ -234,9 +234,10 @@ public class JanelaControlo extends JFrame {
 		DefaultListModel<Camiao> modelo = new DefaultListModel<Camiao>();
 		
 		// criar a lista de camiões
-		// TODO: Adicionar cada camião à lista (ciclo?)
-		Camiao c = null; 
-		modelo.addElement( c );
+		// DONE! : Adicionar cada camião à lista (ciclo?)
+		for(Camiao c: Central.camioes) {
+			modelo.addElement(c);
+		}
 		
 		listaCamioes = new JList<Camiao>( modelo);
 		listaCamioes.setPreferredSize( new Dimension(140, 50) );

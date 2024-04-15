@@ -80,44 +80,47 @@ public class MarcadorPosto {
 	 */
 	public void desenhar( Graphics2D g ) {
 		// se for preciso mostrar a etiqueta
-		if( expandido ) {
-			// TODO colocar a informação correta nas seguintes variáveis
-			String nome = "Minas Tirith";
-			int id = 1;
-			int capacidade = 40000;
-			int quantidade = 10000;
-			int gastoMedio = 2200;
+		if (expandido) {
+			// Feito colocar a informação correta nas seguintes variáveis
+
+			String nome = posto.getNomeDoPosto();
+			int id = posto.getCodigoNumerico();
+			int capacidade = posto.getCapacidadeMaximaCombus();
+			int quantidade = posto.getQuantidadeAtual();
+			int gastoMedio = posto.getGastoDiarioMedioCombus();
 
 			// desenhar a informação na etiqueta
-			etiqueta.paintIcon(null, g, (int)area.getCenterX(), area.y);
-			int statusX = area.x + area.width + 3;			
-			g.setColor( Color.BLACK );
+			etiqueta.paintIcon(null, g, (int) area.getCenterX(), area.y);
+			int statusX = area.x + area.width + 3;
+			g.setColor(Color.BLACK);
 			g.setFont(fonte);
-			g.drawString( nome + " (" + id + ")", statusX, area.y+13 );
+			g.drawString(nome + " (" + id + ")", statusX, area.y + 13);
 			statusX += 32;
-			g.drawString( capacidade + "", statusX, area.y+28 );
-			g.drawString( quantidade + "", statusX, area.y+41 );
+			g.drawString(capacidade + "", statusX, area.y + 28);
+			g.drawString(quantidade + "", statusX, area.y + 41);
 			statusX += 72;
-			g.drawString( gastoMedio +"", statusX, area.y+28 );
+			g.drawString(gastoMedio + "", statusX, area.y + 28);
 		}
 		// se já foi escolhido desenhar o icone respetivo
-		if( escolhido )
-			destino.paintIcon(null, g, area.x, area.y-destino.getIconHeight());
-		
-		// TODO colocar a informação na variável
-		float percentagemOcupacao = 0.5f;
+		if (escolhido)
+			destino.paintIcon(null, g, area.x, area.y - destino.getIconHeight());
+
+		// DONE! colocar a informação na variável
+		float percentagemOcupacao = posto.percentagemOcupacao();
 		ImageIcon icon;
 		// ver qual o icon a usar, de acordo com a percentagem de ocupação
-		if( percentagemOcupacao > 0.45f )
+		if (percentagemOcupacao > 0.45f) {
 			icon = postoVerde;
-		else if( percentagemOcupacao > 0.25f )
+		} else if (percentagemOcupacao > 0.25f) {
 			icon = postoAmarelo;
-		else
+		} else {
 			icon = postoVermelho;
+		}
+
 		icon.paintIcon(null, g, area.x, area.y);
 		
-		// TODO ver se posto tem pedido pendente
-		if( false )
+		// FEITO! ver se posto tem pedido pendente
+		if(posto.temPedidoPendente() )
 			pedindo.paintIcon(null, g, area.x, area.y);
 	}
 	

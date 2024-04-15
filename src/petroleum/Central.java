@@ -12,8 +12,9 @@ import java.util.List;
 public class Central {
 
 		public static List<Posto> postos;
-		public List<Camiao>camioes;
+		public static List<Camiao>camioes;
 		public Point armazenarCentral;
+
 
 
 
@@ -33,7 +34,7 @@ public class Central {
 		this.armazenarCentral = armazenarCentral;
 	}
 
-	public List<Camiao> getCamioes() {
+	public static List<Camiao> getCamioes() {
 		return camioes;
 	}
 

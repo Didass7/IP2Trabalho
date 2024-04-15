@@ -16,7 +16,7 @@ public class Camiao {
 	private int velocidadeMediaKm;
 	private int debitoLs;
 	private String matricula;
-	private Itinerario itinerario;
+	private static Itinerario itinerario;
 
 	public int getCapacidadeLitros() {
 		return capacidadeLitros;
@@ -38,7 +38,7 @@ public class Camiao {
 		return matricula;
 	}
 
-	public Itinerario getItinerario() {
+	public static Itinerario getItinerario() {
 		return itinerario;
 	}
 

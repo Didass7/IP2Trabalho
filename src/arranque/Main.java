@@ -13,10 +13,9 @@ public class Main {
 
 
     public static void main(String[] args) {
-        // don criar a central requerida
-
-        // criar os postos
-        //criar as listas postos
+        //DONE criar a central requerida
+        //DONE criar os postos
+        //DONE criar as listas postos
 
 
         Posto p1 = new Posto(1, "Minas Tirith", new Point(1400, 990), 2200, 10000, 40000);
@@ -40,8 +39,8 @@ public class Main {
         Posto p19 = new Posto(19, "Alcains", new Point(512, 1294), 2130, 2134, 4212);
         Posto p20 = new Posto(20, "Idanha", new Point(873, 2394), 2312, 2345, 1234);
 
-        //  criar os camiões
-        //criar lista camioes
+        //DONE criar os camiões
+        //DONE criar lista camioes
         Camiao camiao1 = new Camiao("11-FG-33", 20000, 65, 20);
         Camiao camiao2 = new Camiao("22-DV-22", 30000, 50, 30);
         Camiao camiao3 = new Camiao("AA-34-BB", 35000, 70, 30);

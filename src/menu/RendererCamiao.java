@@ -63,10 +63,10 @@ public class RendererCamiao implements ListCellRenderer<Camiao> {
 	 */
 	private void desenharInfo(Graphics g) {
 		// TODO colocar os valores corretos nas variáveis
-		int quantidade = 25000;
-		int capacidadeLivre = 5000;
-		int velocidadeMedia = 60;
-		float percentOcupacao = 0.65f;
+		int quantidade = camiao.getQuantidadeCombusAtual();
+		int capacidadeLivre = camiao.capacidadeLivre();
+		int velocidadeMedia = camiao.getVelocidadeMediaKm();
+		float percentOcupacao = camiao.percentagemOcupacao();
 		// duraçao do turno em horas e minutos
 		int duracaoHoras = 10;
 		int duracaoMinutos = 30;
@@ -79,9 +79,9 @@ public class RendererCamiao implements ListCellRenderer<Camiao> {
 		g.fillRect( 21, 7, numPixeis, 14 );
 		camiaoIcon.paintIcon( painel, g, 0, 0);
 		g.setColor( Color.BLACK );
-		g.drawString( "" + quantidade, 60, 12);
-		g.drawString( "" + capacidadeLivre, 60, 25);
-		g.drawString( "" + velocidadeMedia, 30, 47);
+		g.drawString( "" + camiao.getQuantidadeCombusAtual(), 60, 12);
+		g.drawString( "" + camiao.capacidadeLivre(), 60, 25);
+		g.drawString( "" + camiao.getVelocidadeMediaKm(), 30, 47);
 		g.drawString( duracaoHoras + ":" + duracaoMinutos, 83, 47);
 	}
 
@@ -90,9 +90,11 @@ public class RendererCamiao implements ListCellRenderer<Camiao> {
 												  boolean isSelected, boolean cellHasFocus) {
 		camiao = value;
 
-		//camiao.geMatricula
-		// TODO colocar a informação nas variáveis
-		String matricula = "AA-00-AA";
+		//camiao.getMatricula
+		// DONE? colocar a informação nas variáveis
+
+		String matricula = camiao.getMatricula();
+
 
 		((TitledBorder)painel.getBorder()).setTitle( matricula );
 		((TitledBorder)painel.getBorder()).setTitleColor( isSelected? Color.BLUE: Color.BLACK);

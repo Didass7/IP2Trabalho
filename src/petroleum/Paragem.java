@@ -7,5 +7,28 @@ package petroleum;
 public class Paragem {
 
 
+    private Posto posto;
+    private int litrosParaDepositar;
 
+    public Paragem(Posto posto,int litrosParaDepositar){
+
+        this.posto=posto;
+        this.litrosParaDepositar=litrosParaDepositar;
+    }
+
+    public Posto getPosto() {
+        return posto;
+    }
+
+    public void setPosto(Posto posto) {
+        this.posto = posto;
+    }
+
+    public int getLitrosParaDepositar() {
+        return litrosParaDepositar;
+    }
+
+    public void setLitrosParaDepositar(int litrosParaDepositar) {
+        this.litrosParaDepositar = litrosParaDepositar;
+    }
 }
