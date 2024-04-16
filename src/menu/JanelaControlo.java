@@ -39,6 +39,7 @@ public class JanelaControlo extends JFrame {
 	
 	private Central central;       // central do sistema
 	private Camiao camiaoSel;      // camião atualmente selecionado
+
 	
 	// a lista dos marcadores
 	private ArrayList<MarcadorPosto> marcadores = new ArrayList<MarcadorPosto>();
@@ -62,20 +63,20 @@ public class JanelaControlo extends JFrame {
 	private static final Stroke estiloLinhaInterior = new BasicStroke(2f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND );
 	private static final Composite alphaMeio = AlphaComposite.getInstance( AlphaComposite.SRC_OVER, 0.5f );
 	private static final Composite alphaFull = AlphaComposite.getInstance( AlphaComposite.SRC_OVER, 1f );
-	
+
 	/** Cria a janela para uma dada central
 	 * @param c a contral a ser gerida por esta janela
 	 */
 	public JanelaControlo( Central c ) {
 		central = c;
 		
-		// TODO criar os marcadores de posto, um para cada posto (ciclo?)
+		// DONE criar os marcadores de posto, um para cada posto (ciclo?)
 		for (Posto p: Central.getPostos()){
 			MarcadorPosto mp = new MarcadorPosto(p);
 			marcadores.add( mp );
 		}
 
-		// TODO adicionar o marcador à lista e descomentar a linha seguinte 
+		// DONE adicionar o marcador à lista e descomentar a linha seguinte
 		//      (está em comentário para não dar NullPointerException) 
 
 		
@@ -85,38 +86,29 @@ public class JanelaControlo extends JFrame {
 	/** desenha os marcadores de postos 
 	 * @param g onde desenhar
 	 */
-	private void desenharPostos( Graphics2D g ){
+	private void desenharPostos( Graphics2D g ) {
 		// desenhar o mapa
 		mapa.paintIcon(painelDesenho, g, 0, 0);
 
 		// TODO ver a posição da central (não usar o valor direto, como está)
-		Point pos = new Point(505,750);
-		
+		Point pos = central.getPosicao();
+
 		// desenhar a central
-		refinaria.paintIcon( null, g, pos.x-refinaria.getIconWidth()/2, pos.y - refinaria.getIconHeight());
-		g.setColor( Color.red );
-		g.fillOval( pos.x-6, pos.y-6, 12, 12 );
-		
+		refinaria.paintIcon(null, g, pos.x - refinaria.getIconWidth() / 2, pos.y - refinaria.getIconHeight());
+		g.setColor(Color.red);
+		g.fillOval(pos.x - 6, pos.y - 6, 12, 12);
+
 		// desenhar os postos
-		for( MarcadorPosto mp : marcadores )
-			mp.desenhar( g );
-		
+		for (MarcadorPosto mp : marcadores)
+			mp.desenhar(g);
+
 		// desenhar o itinerário num ambiente especial (por causa das linhas)
-		Graphics2D ge = (Graphics2D)g.create();
+		Graphics2D ge = (Graphics2D) g.create();
 
 		// TODO ver o itinerário (não criar um novo como aqui)
-		//Itinerario iti =Camiao.getItinerario();
-		//Point p1 = iti.getInicio();  // começa no início
+		//Itinerario it = camiaoSel.getItinerario();
 		// TODO para cada ponto desenhar uma linha entre esse e o anterior
-		// p1 é sempre o anterior, p2 é sempre o atual
-		//for( int i=0; i < 0; i++ ){ // TODO usar o for correto
-		//	Point p2 = null;        // TODO próximo ponto no itinerário
-		//	desenhaLinha(ge, p1, p2);
-		//	p1 = p2;
-		//}
-		//Point p2 = iti.getInicio(); // e acaba no início
-		//desenhaLinha( ge, p1,  p2 );
-		//ge.dispose();
+		//p1 é sempre o anterior, p2 é sempre o atual
 	}
 
 	/** desenha uma linha entre dois pontos

@@ -95,7 +95,7 @@ public class Posto {
      *         EXCEDE_CAPACIDADE_POSTO, se o posto não tem capacidade de armazenar os litros indicados
      */
     public int enche(int nLitros) {
-        // TODO fazer este método
+        // FEITO! fazer este método
         //Teste do nosso melhor amigo
 
         // Verificar se o posto tem capacidade para armazenar os litros indicados
@@ -119,7 +119,7 @@ public class Posto {
      * @return a capacidade livre
      */
     public int capacidadeLivre() {
-        // TODO fazer este método
+        // FEITO! fazer este método
         return capacidadeMaximaCombus - quantidadeAtual;
     }
 
@@ -127,7 +127,7 @@ public class Posto {
      * @return a percentagem de ocupação do posto
      */
     public float percentagemOcupacao() {
-        // TODO fazer este método
+        // FEITO! fazer este método
         return (float) quantidadeAtual / capacidadeMaximaCombus;
     }
 
@@ -135,7 +135,7 @@ public class Posto {
      * @return true, se tiver um pedido
      */
     public boolean temPedidoPendente() {
-        // TODO fazer este método
+        // FEITO! fazer este método
 
         //Pode ser necessario alterar alguma cena para nao dar cana
         if (quantidadeAtual<OCUPACAO_MINIMA*capacidadeMaximaCombus) {

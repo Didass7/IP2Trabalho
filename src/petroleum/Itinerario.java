@@ -29,19 +29,41 @@ public class Itinerario {
 	}
 
 
+
+	public Point getPontoPartida() {
+		return pontoPartida;
+	}
+
+	public void setPontoPartida(Point pontoPartida) {
+		this.pontoPartida = pontoPartida;
+	}
+
+
+	public List<Posto> getParagens() {
+		return paragens;
+	}
+
+	public void setParagens(List<Posto> paragens) {
+		this.paragens = paragens;
+	}
+
 	/** retorna o ponto de inicio do itenerário
 	 * @return o ponto de inicio do itenerário
 	 */
 	public Point getInicio() {
-		// TODO fazer este método (não usar este valor assim)
-		return pontoPartida;
+		// DONE? fazer este método (não usar este valor assim)
+		return this.pontoPartida;
 	}
 
 	/** limpa o itinerário, isto é, remove todas
 	 * as paragens do mesmo
 	 */
 	public void limpar() {
-		// TODO fazer este método
+		// DONE fazer este método
 		paragens.clear();
+	}
+
+	public Posto getUltimaParagem() {
+		return paragens.size() == 0 ? null : paragens.get(paragens.size() - 1);
 	}
 }

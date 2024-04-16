@@ -12,6 +12,7 @@ import javax.swing.ListCellRenderer;
 import javax.swing.border.TitledBorder;
 
 import petroleum.Camiao;
+import petroleum.Central;
 
 /** Renderer usado para apresentar as informações de um camião na lista de camiões
  */
@@ -62,8 +63,10 @@ public class RendererCamiao implements ListCellRenderer<Camiao> {
 	 * @param g ambiente onde desenhar
 	 */
 	private void desenharInfo(Graphics g) {
-		// TODO colocar os valores corretos nas variáveis
-		int quantidade = camiao.getQuantidadeCombusAtual();
+		// DONE colocar os valores corretos nas variáveis
+
+		//se alguma cena estiver mal, o erro pode estar aqui!!!
+		int quantidade = camiao.getCapacidadeLitros();
 		int capacidadeLivre = camiao.capacidadeLivre();
 		int velocidadeMedia = camiao.getVelocidadeMediaKm();
 		float percentOcupacao = camiao.percentagemOcupacao();
@@ -79,9 +82,9 @@ public class RendererCamiao implements ListCellRenderer<Camiao> {
 		g.fillRect( 21, 7, numPixeis, 14 );
 		camiaoIcon.paintIcon( painel, g, 0, 0);
 		g.setColor( Color.BLACK );
-		g.drawString( "" + camiao.getQuantidadeCombusAtual(), 60, 12);
-		g.drawString( "" + camiao.capacidadeLivre(), 60, 25);
-		g.drawString( "" + camiao.getVelocidadeMediaKm(), 30, 47);
+		g.drawString( "" + quantidade, 60, 12);
+		g.drawString( "" + capacidadeLivre, 60, 25);
+		g.drawString( "" + velocidadeMedia, 30, 47);
 		g.drawString( duracaoHoras + ":" + duracaoMinutos, 83, 47);
 	}
 

@@ -1,6 +1,7 @@
 package petroleum;
 import java.awt.Point;
 import menu.Mapa;
+import petroleum.Camiao;
 
 /** Esta classe representa um camião, que, neste contexto, se refere à capacidade de transportar
  * combústivel. Tem para isso um limite máximo de combústivel que pode transportar e a
@@ -17,6 +18,9 @@ public class Camiao {
 	private int debitoLs;
 	private String matricula;
 	private static Itinerario itinerario;
+	private Point localizacao;
+
+
 
 	public int getCapacidadeLitros() {
 		return capacidadeLitros;
@@ -73,6 +77,7 @@ public class Camiao {
 		this.velocidadeMediaKm = velocidadeMediaKm;
 		this.debitoLs = debitoLs;
 
+
 	}
 
 	/** o tempo máximo de um turno, que são as 14 horas
@@ -93,8 +98,11 @@ public class Camiao {
 			return Central.EXCEDE_CAPACIDADE_CAMIAO;
 		}
 		//variavel para calcular o tempo necessario para atender o pedido
-		//double tempoParaPedido= tempoDespejar(litros)+ tempoPercorrer;
-		// TODO implementar este método
+		double tempoParaPedido= tempoDespejar(litros)+ tempoPercorrer(Camiao.getItinerario().getInicio(), posto.getLocalizacao());
+		//  implementar este método
+		if (tempoParaPedido > TEMPO_TURNO) {
+			return Central.EXCEDE_TEMPO_TURNO;
+		}
 		return Central.ACEITE;
 	}
 
@@ -107,7 +115,12 @@ public class Camiao {
 	 *         EXCEDE_TEMPO_TURNO, se o pedido implicar um tempo maior que um turno
 	 */
 	public int addPosto( Posto p, int litros ) {
-		// TODO fazer este método
+		// FEITO! fazer este método
+
+		if (podeFazerPedido(p, litros) == Central.ACEITE) {
+			itinerario.adicionaParagem(p, litros);
+		}
+
 		return Central.ACEITE;
 	}
 
@@ -115,8 +128,15 @@ public class Camiao {
 	 * @return o tempo, em segundos, que demora a fazer o itinerário
 	 */
 	public double duracaoTurno( ) {
-		// TODO fazer este método
-		return 0;
+		double tempoTotal=0;
+		Point localizacaoAtual= Camiao.getItinerario().getPontoPartida();
+
+		for (Posto p:Camiao.getItinerario().getParagens()){
+			tempoTotal+=tempoPercorrer(localizacaoAtual,p.getLocalizacao())+tempoDespejar(p.getQuantidadeAtual());
+			localizacaoAtual=p.getLocalizacao();
+		}
+		// DONE fazer este método
+		return tempoTotal;
 	}
 
 	/** retorna o tempo, em segundos, que demora a fazer o itinerário
@@ -126,15 +146,44 @@ public class Camiao {
 	 * @return tempo, em segundos, que demora a fazer o itinerário mais o posto extra
 	 */
 	public double duracaoTurnoExtra( Posto extra, int nLitros ) {
-		// TODO fazer este método
-		return 0;
+		double tempoTotal = duracaoTurno(); // get the total time for the current route
+
+		// calculate the time to travel to the extra stop from the last stop in the itinerary
+		Point ultimaLocalizacao = Camiao.getItinerario().getUltimaParagem().getLocalizacao();
+		tempoTotal += tempoPercorrer(ultimaLocalizacao, extra.getLocalizacao());
+
+		// add the time to unload at the extra stop
+		tempoTotal += tempoDespejar(nLitros);
+
+		return tempoTotal;
 	}
 
 	/** Efetua o transporte e transferência de combustível
 	 * para todos os postos no itinerário
 	 */
 	public void transporta( ){
-		// TODO fazer este método
+		for (Posto posto : itinerario.getParagens()) {
+			// Verificar se o camião tem combustível suficiente para abastecer o posto
+			if (quantidadeCombusAtual >= posto.getQuantidadeAtual()) {
+				// Transferir combustível do camião para o posto
+				quantidadeCombusAtual -= posto.getQuantidadeAtual();
+				posto.setQuantidadeAtual(0);
+			} else {
+				// Se o camião não tem combustível suficiente, transferir
+				// odo o combustível disponível
+				posto.setQuantidadeAtual(posto.getQuantidadeAtual() - quantidadeCombusAtual);
+				quantidadeCombusAtual = 0;
+			}
+
+			// Atualizar a localização do camião para a localização do posto
+			localizacao = posto.getLocalizacao();
+
+			// Se o camião está vazio, não há necessidade de continuar o itinerário
+			if (quantidadeCombusAtual == 0) {
+				break;
+			}
+		}
+		// DONE fazer este método
 	}
 
 	/** retorna o tempo, em segundos, que demora a percorrer o caminho entre
@@ -144,8 +193,15 @@ public class Camiao {
 	 * @return o tempo que demora a ir de ini a fim.
 	 */
 	private double tempoPercorrer( Point ini, Point fim ){
-		// TODO terminar este método (distância / velocidade)
-		return Mapa.distancia(ini, fim);
+		// FEITO! terminar este método (distância / velocidade)
+
+		if((ini==null|| fim==null) && velocidadeMediaKm<0){
+			return -1;
+		}else{
+
+			return (Mapa.distancia(ini, fim))/ velocidadeMediaKm;
+		}
+
 	}
 
 	/** retorna quanto tempo demora, em segundos, a transferir a quantidade de liquido
@@ -153,24 +209,45 @@ public class Camiao {
 	 * @return o tempo que demora, em segundos, a transferir os nLitros
 	 */
 	private double tempoDespejar( int nLitros ){
-		// TODO fazer este método
-		return 0;
+		// FEITO! fazer este método
+
+		if (nLitros<=0){
+			return -1;
+		}else {
+			return (double) nLitros / debitoLs;
+		}
+		//tempo que demmora a despejar em segundos;
 	}
 
 	/** retorna a percentagem de ocupação do camião, entre 0 (0%) e 1 (100%)
 	 * @return a percentagem de ocupação
 	 */
 	public float percentagemOcupacao() {
-		// TODO fazer este método
-		return 0;
+		// FEITO! fazer este método
+		return (float) quantidadeCombusAtual / capacidadeLitros;
 	}
 
 	/** retorna a capacidade livre, isto é, quantos litros ainda pode
 	 * adicionar à carga
 	 * @return a capacidade livre, em litros
 	 */
-	public int capacidadeLivre() {
-		// TODO fazer este método
-		return 0;
+	public  int capacidadeLivre() {
+		// FEITO! fazer este método
+		return capacidadeLitros - quantidadeCombusAtual;
+	}
+
+	/** retorna o tempo que demora a entregar a carga a um posto
+	 * @param //posto o posto a entregar a carga
+	 * @return o tempo que demora a entregar a carga a um posto
+	 */
+
+	public Point getLocalizacao() {
+		return this.localizacao;
+	}
+
+	public double tempoParaEntrega(Posto posto) {
+		double tempoPercorrer = tempoPercorrer(this.getLocalizacao(), posto.getLocalizacao());
+		double tempoDespejar = tempoDespejar(posto.getQuantidadeAtual());
+		return tempoPercorrer + tempoDespejar;
 	}
 }

@@ -79,8 +79,9 @@ public class Main {
         camioes.add(camiao5);
 
         Central c= new Central( postos,camioes);
+        c.setPosicao(new Point(505, 750));
 
-        //TODO criar a apresentar a janela principal
+        //DONE criar a apresentar a janela principal
         JanelaControlo postosFrame = new JanelaControlo(c);
         postosFrame.setVisible(true);
     }

@@ -14,9 +14,17 @@ public class Central {
 		public static List<Posto> postos;
 		public static List<Camiao>camioes;
 		public Point armazenarCentral;
+		private Point posicao;
 
 
 
+	public Point getPosicao() {
+		return this.posicao;
+	}
+
+	public void setPosicao(Point posicao) {
+		this.posicao = posicao;
+	}
 
 	public static List<Posto> getPostos() {
 		return postos;
@@ -65,16 +73,31 @@ public class Central {
 	 * @return o camião com a matrícula indicada, ou null se não existir
 	 */
 	public Camiao getCamiao(String matricula ) {
-		// TODO fazer este método
+		// FEITO! fazer este método
+		if(camioes!=null) {
+			for (Camiao camiao : camioes) {
+				if (camiao.getMatricula().equals(matricula)) {
+					return camiao;
+				}
+			}
+		}
 		return null;
 	}
-	
+
+
 	/** retorna o posto que tem um dado id
 	 * @param id id a pesquisar
 	 * @return o posto com o id, ou null se não existir
 	 */
 	public Posto getPosto( int id ) {
-		// TODO fazer este método
+		// FEITO! fazer este método
+		if (postos!=null){
+			for (Posto posto: postos){
+				if (posto.getCodigoNumerico()==id){
+					return posto;
+				}
+			}
+		}
 		return null;
 	}
 
@@ -90,13 +113,32 @@ public class Central {
 	 *         POSTO_NAO_PRECISA, se o posto não necessita de ser abastecido
 	 *         EXCEDE_CAPACIDADE_POSTO, se o posto não tem capacidade de armazenar os litros indicados      
 	 */
+
 	public int processarEntrega(Posto posto, int litros, Camiao camiao) {
-		// TODO fazer este método
+		if (!posto.temPedidoPendente()){
+			return POSTO_NAO_PRECISA;
+		}
+
+		if (litros > camiao.capacidadeLivre()){
+			return EXCEDE_CAPACIDADE_CAMIAO;
+		}
+
+		// Verificar se a entrega excede o tempo de turno do camião
+		if (camiao.tempoParaEntrega(posto) > Camiao.TEMPO_TURNO) {
+			return EXCEDE_TEMPO_TURNO;
+		}
+
+		if (litros + posto.getQuantidadeAtual() > posto.getCapacidadeMaximaCombus()) {
+			return EXCEDE_CAPACIDADE_POSTO;
+		}
+
+		// Adicionar o pedido ao camião
+		camiao.podeFazerPedido(posto, litros);
 		return ACEITE;
 	}
 
-	
-	/** finaliza um turno, isto é, realiza os itinerários e
+
+	/* finaliza um turno, isto é, realiza os itinerários e
 	 * processa os gastos dos postos 
 	 */
 	public void finalizarTurno() {
@@ -108,12 +150,23 @@ public class Central {
 	 * transportar o combústivel para os postos adjudicados 
 	 */
 	private void realizarItinerarios() {
-		// TODO fazer este método
+		for(Camiao camiao: camioes){
+			camiao.transporta();
+		}
+		// DONE fazer este método
 	}
 	
 	/** processa os gastos dos postos
 	 */
 	private void processarGastosPostos() {
-		// TODO fazer este método
+		// DONE? fazer este método
+		for (Posto posto : postos) {
+			// Calcular o gasto com base na quantidade de combustível entregue
+			double gasto = posto.getQuantidadeAtual() * posto.getGastoDiarioMedioCombus();
+
+			// Processar o gasto
+			posto.setGastoDiarioMedioCombus((int) gasto);
+		}
 	}
 }
+
