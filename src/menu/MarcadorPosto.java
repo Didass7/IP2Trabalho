@@ -46,30 +46,6 @@ public class MarcadorPosto {
 
 		// DONE ver a posição do posto (não criar um novo como aqui)
 
-		Point p1=new Point(1400,990);
-		Point p2=new Point(925,710);
-		Point p3=new Point(1235,510);
-		Point p4=new Point(890,310);
-		Point p5=new Point(455,335);
-		Point p6=new Point(1035,800);
-		Point p7=new Point(1690,915);
-		Point p8=new Point(735,310 );
-		Point p9=new Point(1500,180);
-		Point p10=new Point(860,500);
-		Point p11=new Point(1540,980);
-		Point p12=new Point(1380,700);
-		Point p13=new Point(1110,1180);
-		Point p14=new Point(1090,240);
-		Point p15=new Point(175,400);
-		Point p16=new Point(160,123);
-		Point p17=new Point(214,124);
-		Point p18=new Point(241,1200);
-		Point p19=new Point(512,1294);
-		Point p20=new Point(873,2394);
-
-
-
-
 		int offsetX = postoVerde.getIconWidth()/2;
 		int offsetY = postoVerde.getIconHeight();
 		area = new Rectangle( pos.x-offsetX, pos.y-offsetY, postoVerde.getIconWidth(), postoVerde.getIconHeight());

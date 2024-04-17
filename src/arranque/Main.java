@@ -11,13 +11,10 @@ import petroleum.Posto;
 /** Responsável por cria o ambiente de execução e criar a janela */
 public class Main {
 
-
     public static void main(String[] args) {
         //DONE criar a central requerida
         //DONE criar os postos
         //DONE criar as listas postos
-
-
         Posto p1 = new Posto(1, "Minas Tirith", new Point(1400, 990), 2200, 10000, 40000);
         Posto p2 = new Posto(2, "Isengard", new Point(925, 710), 3200, 7000, 30000);
         Posto p3 = new Posto(3, "Dol Guldur", new Point(1235, 510), 2300, 17000, 30000);
@@ -38,48 +35,42 @@ public class Main {
         Posto p18 = new Posto(18, "Castelo Branco", new Point(1753, 1200), 2100, 23000, 26000);
         Posto p19 = new Posto(19, "Alcains", new Point(1100, 1294), 2130, 2134, 4212);
         Posto p20 = new Posto(20, "Idanha", new Point(873, 210), 2312, 2345, 1234);
-
         //DONE criar os camiões
         //DONE criar lista camioes
-        Camiao camiao1 = new Camiao("11-FG-33", 0,20000, 65, 20);
-        Camiao camiao2 = new Camiao("22-DV-22", 0,30000, 50, 30);
-        Camiao camiao3 = new Camiao("AA-34-BB", 0,35000, 70, 30);
-        Camiao camiao4 = new Camiao("CF-65-FC", 0,40000, 45, 40);
-        Camiao camiao5 = new Camiao("AZ-75-PO", 0,25000, 55, 50);
+        Camiao camiao1 = new Camiao("11-FG-33", 20000, 65, 20);
+        Camiao camiao2 = new Camiao("22-DV-22", 30000, 50, 30);
+        Camiao camiao3 = new Camiao("AA-34-BB", 35000, 70, 30);
+        Camiao camiao4 = new Camiao("CF-65-FC", 40000, 45, 40);
+        Camiao camiao5 = new Camiao("AZ-75-PO", 25000, 55, 50);
 
+        Central c= new Central( new Point(505, 750) );
 
-        List<Posto> postos = new ArrayList<>();
-        postos.add(p1);
-        postos.add(p2);
-        postos.add(p3);
-        postos.add(p4);
-        postos.add(p5);
-        postos.add(p6);
-        postos.add(p7);
-        postos.add(p8);
-        postos.add(p9);
-        postos.add(p10);
-        postos.add(p11);
-        postos.add(p12);
-        postos.add(p13);
-        postos.add(p14);
-        postos.add(p15);
-        postos.add(p16);
-        postos.add(p17);
-        postos.add(p18);
-        postos.add(p19);
-        postos.add(p20);
+        c.addPosto(p1);
+        c.addPosto(p2);
+        c.addPosto(p3);
+        c.addPosto(p4);
+        c.addPosto(p5);
+        c.addPosto(p6);
+        c.addPosto(p7);
+        c.addPosto(p8);
+        c.addPosto(p9);
+        c.addPosto(p10);
+        c.addPosto(p11);
+        c.addPosto(p12);
+        c.addPosto(p13);
+        c.addPosto(p14);
+        c.addPosto(p15);
+        c.addPosto(p16);
+        c.addPosto(p17);
+        c.addPosto(p18);
+        c.addPosto(p19);
+        c.addPosto(p20);
 
-        List<Camiao> camioes = new ArrayList<>();
-
-        camioes.add(camiao1);
-        camioes.add(camiao2);
-        camioes.add(camiao3);
-        camioes.add(camiao4);
-        camioes.add(camiao5);
-
-        Central c= new Central( postos,camioes);
-        c.setPosicao(new Point(505, 750));
+        c.addCamiao(camiao1);
+        c.addCamiao(camiao2);
+        c.addCamiao(camiao3);
+        c.addCamiao(camiao4);
+        c.addCamiao(camiao5);
 
         //DONE criar a apresentar a janela principal
         JanelaControlo postosFrame = new JanelaControlo(c);

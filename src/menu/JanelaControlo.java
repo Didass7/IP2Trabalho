@@ -13,7 +13,6 @@ import java.awt.Stroke;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Line2D;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
@@ -37,62 +36,54 @@ import petroleum.Posto;
  */
 @SuppressWarnings("serial")
 public class JanelaControlo extends JFrame {
-
+	
 	private Central central;       // central do sistema
 	private Camiao camiaoSel;      // camião atualmente selecionado
 
-
+	
 	// a lista dos marcadores
 	private ArrayList<MarcadorPosto> marcadores = new ArrayList<MarcadorPosto>();
 	// o marcador selecionado atualmente (null se não houver nenhum selecionado)
 	private MarcadorPosto marcadorAtual;
 	// a lista de camiões
-	private JList<Camiao> listaCamioes;
+	private JList<Camiao> listaCamioes; 
 
-	/**
-	 * imagem com o mapa
-	 */
-	private static ImageIcon mapa = new ImageIcon("icones/mapa.jpg");
+	/** imagem com o mapa */
+	private static ImageIcon mapa = new ImageIcon( "icones/mapa.jpg" );
 	private JPanel painelDesenho;  // onde se vai desenhar o mapa
 	private Point antes;           // variável onde se clicou antes (para efeitos de mover o mapa)
-
-	/**
-	 * imagem para a refinaria
-	 */
-	private static ImageIcon refinaria = new ImageIcon("icones/refinaria.png");
+	
+	/** imagem para a refinaria */
+	private static ImageIcon refinaria = new ImageIcon( "icones/refinaria.png" );
 
 	// cores e estilos de linha e efeito alfa para desenhar o itinerário
-	private static final Color corItinerarioExt = new Color(255, 130, 130);
-	private static final Color corItinerarioInt = new Color(255, 30, 30);
-	private static final Stroke estiloLinhaExterior = new BasicStroke(5.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
-	private static final Stroke estiloLinhaInterior = new BasicStroke(2f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
-	private static final Composite alphaMeio = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f);
-	private static final Composite alphaFull = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f);
+	private static final Color corItinerarioExt = new Color( 255, 130, 130 );
+	private static final Color corItinerarioInt = new Color( 255, 30, 30 );
+	private static final Stroke estiloLinhaExterior = new BasicStroke(5.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND );
+	private static final Stroke estiloLinhaInterior = new BasicStroke(2f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND );
+	private static final Composite alphaMeio = AlphaComposite.getInstance( AlphaComposite.SRC_OVER, 0.5f );
+	private static final Composite alphaFull = AlphaComposite.getInstance( AlphaComposite.SRC_OVER, 1f );
 
-	/**
-	 * Cria a janela para uma dada central
-	 *
+	/** Cria a janela para uma dada central
 	 * @param c a contral a ser gerida por esta janela
 	 */
-	public JanelaControlo(Central c) {
+	public JanelaControlo( Central c ) {
 		central = c;
-
+		
 		// DONE criar os marcadores de posto, um para cada posto (ciclo?)
-		for (Posto p : Central.getPostos()) {
+		for (Posto p: c.getPostos()){
 			MarcadorPosto mp = new MarcadorPosto(p);
-			marcadores.add(mp);
+			marcadores.add( mp );
 		}
 
 		// DONE adicionar o marcador à lista e descomentar a linha seguinte
 		//      (está em comentário para não dar NullPointerException) 
 
-
+		
 		inicializarInterface();
 	}
 
-	/**
-	 * desenha os marcadores de postos
-	 *
+	/** desenha os marcadores de postos 
 	 * @param g onde desenhar
 	 */
 	private void desenharPostos( Graphics2D g ) {
@@ -101,7 +92,6 @@ public class JanelaControlo extends JFrame {
 
 		// TODO ver a posição da central (não usar o valor direto, como está)
 		Point pos = central.getPosicao();
-
 
 		// desenhar a central
 		refinaria.paintIcon(null, g, pos.x - refinaria.getIconWidth() / 2, pos.y - refinaria.getIconHeight());
@@ -116,14 +106,16 @@ public class JanelaControlo extends JFrame {
 		Graphics2D ge = (Graphics2D) g.create();
 
 		// TODO ver o itinerário (não criar um novo como aqui)
+		//Itinerario it = camiaoSel.getItinerario();
+		// TODO para cada ponto desenhar uma linha entre esse e o anterior
 		if (camiaoSel != null) {
-			Itinerario iti = camiaoSel.getItinerarioAtual();
+			Itinerario iti = camiaoSel.getItinerario();
 
 			if (iti != null) {
 				// TODO para cada ponto desenhar uma linha entre esse e o anterior
 				/// p1 é sempre o anterior, p2 é sempre o atual
 				Point p1 = iti.getInicio();
-				for (int i = 0; i < iti.contarParagens() - 1; i++) {
+				for (int i = 0; i < iti.contarParagens(); i++) {
 
 					//Posto posto = iti.getParagens().get(i); // TODO usar o for correto
 					Point p2 = iti.paragem(i);        // TODO próximo ponto no itinerário
@@ -136,7 +128,7 @@ public class JanelaControlo extends JFrame {
 		}
 
 		ge.dispose();
-
+		//p1 é sempre o anterior, p2 é sempre o atual
 	}
 
 	/** desenha uma linha entre dois pontos
@@ -171,10 +163,11 @@ public class JanelaControlo extends JFrame {
 	private void proximoTurno() {
 		central.finalizarTurno();
 		for( MarcadorPosto mp : marcadores )
-			mp.setEscolhido( false );
+			mp.setEscolhido( false);
 		repaint();
 	}
 
+	
 	/** método chamado quando o utilizador pressiona o botão esquerdo no mapa
 	 * @param e evento do rato
 	 */
@@ -254,7 +247,7 @@ public class JanelaControlo extends JFrame {
 		
 		// criar a lista de camiões
 		// DONE! : Adicionar cada camião à lista (ciclo?)
-		for(Camiao c: Central.camioes) {
+		for(Camiao c: central.getCamioes()) {
 			modelo.addElement(c);
 		}
 		

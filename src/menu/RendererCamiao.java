@@ -66,8 +66,8 @@ public class RendererCamiao implements ListCellRenderer<Camiao> {
 		// DONE colocar os valores corretos nas variáveis
 
 		//se alguma cena estiver mal, o erro pode estar aqui!!!
-		int quantidade = camiao.getQuantidadeCombusAtual();
-		int capacidadeLivre = camiao.capacidadeLivre();
+		int quantidade = camiao.getCapacidadeLitros();
+		int capacidadeLivre = camiao.getQuantidadeCombusAtual();
 		int velocidadeMedia = camiao.getVelocidadeMediaKm();
 		float percentOcupacao = camiao.percentagemOcupacao();
 		// duraçao do turno em horas e minutos

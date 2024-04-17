@@ -2,7 +2,7 @@ package petroleum;
 
 import java.awt.*;
 
-import static petroleum.Central.camioes;
+
 
 /* Um posto do sistema. Um posto deve ter uma capacidade
  * máxima de combustível, assim como a quantidade de combustível que tem.
@@ -136,37 +136,35 @@ public class Posto {
      */
     public boolean temPedidoPendente() {
         // FEITO! fazer este método
-
         //Pode ser necessario alterar alguma cena para nao dar cana
-        if (quantidadeAtual<OCUPACAO_MINIMA*capacidadeMaximaCombus) {
-            return true;
-        }
-        else if (Math.random()<0.1) {
-            return true;
-        }
-        else if(quantidadeAtual>OCUPACAO_SUFICIENTE){
-            return false;
-        }
-        return false;
+        return pedidoPendente;
     }
 
     /* Laborar do posto. O posto processa os gastos e verifica
      * se precisa de realizar um pedido de abastecimento
      */
     public void laborar() {
+
         // FEITO! fazer este método
 
-        //Pode ser necessario alterar alguma cena para nao dar cana
         int debitoTotal = 0;
-        for (Camiao camiao : camioes) {
-            debitoTotal += camiao.getDebitoLs();
-        }
+
         if (debitoTotal > capacidadeMaximaCombus * OCUPACAO_SUFICIENTE) {
             pedidoPendente = true;
         } else {
             pedidoPendente = false;
         }
-    }
 
+        if (percentagemOcupacao()  < OCUPACAO_MINIMA ) {
+            pedidoPendente = true;
+
+            //Resolver este problema do Math.Random()
+        } else if ((percentagemOcupacao()> OCUPACAO_MINIMA)&&(percentagemOcupacao() < OCUPACAO_SUFICIENTE)) {
+            if (Math.random()<0.1) {
+                pedidoPendente = true;
+            }
+            pedidoPendente = true;
+        }
+    }
 }
 

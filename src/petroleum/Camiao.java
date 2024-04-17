@@ -17,15 +17,9 @@ public class Camiao {
 	private int velocidadeMediaKm;
 	private int debitoLs;
 	private String matricula;
-	private static Itinerario itinerario;
+	private Itinerario itinerario;
 	private Point localizacao;
-	private Itinerario itinerarioAtual;
 
-
-
-	public Itinerario getItinerarioAtual() {
-		return this.itinerarioAtual;
-	}
 
 	public int getCapacidadeLitros() {
 		return capacidadeLitros;
@@ -47,7 +41,7 @@ public class Camiao {
 		return matricula;
 	}
 
-	public static Itinerario getItinerario() {
+	public Itinerario getItinerario() {
 		return itinerario;
 	}
 
@@ -77,14 +71,14 @@ public class Camiao {
 
 
 
-	public Camiao(String matricula,int quantidadeCombusAtual, int capacidadeLitros, int velocidadeMediaKm, int debitoLs) {
+	public Camiao(String matricula, int capacidadeLitros, int velocidadeMediaKm, int debitoLs) {
 
 		this.matricula = matricula;
 		this.capacidadeLitros = capacidadeLitros;
 		this.velocidadeMediaKm = velocidadeMediaKm;
 		this.debitoLs = debitoLs;
-		this.quantidadeCombusAtual = quantidadeCombusAtual;
-		this.itinerario= new Itinerario(Central.getPosicao());
+
+		this.itinerario= new Itinerario( new Point(505,750) );
 
 	}
 
@@ -106,7 +100,7 @@ public class Camiao {
 			return Central.EXCEDE_CAPACIDADE_CAMIAO;
 		}
 		//variavel para calcular o tempo necessario para atender o pedido
-		double tempoParaPedido= tempoDespejar(litros)+ tempoPercorrer(Camiao.getItinerario().getInicio(), posto.getLocalizacao());
+		double tempoParaPedido= tempoDespejar(litros)+ tempoPercorrer(getItinerario().getInicio(), posto.getLocalizacao());
 		//  implementar este método
 		if (tempoParaPedido > TEMPO_TURNO) {
 			return Central.EXCEDE_TEMPO_TURNO;
@@ -137,11 +131,11 @@ public class Camiao {
 	 */
 	public double duracaoTurno( ) {
 		double tempoTotal=0;
-		Point localizacaoAtual= Camiao.getItinerario().getPontoPartida();
+		Point localizacaoAtual= getItinerario().getPontoPartida();
 
-		for (Posto p:Camiao.getItinerario().getParagens()){
-			tempoTotal+=tempoPercorrer(localizacaoAtual,p.getLocalizacao())+tempoDespejar(p.getQuantidadeAtual());
-			localizacaoAtual=p.getLocalizacao();
+		for (Paragem p: getItinerario().getParagens() ){
+			tempoTotal+=tempoPercorrer(localizacaoAtual,p.getPosto().getLocalizacao())+tempoDespejar(p.getLitrosParaDepositar());
+			localizacaoAtual=p.getPosto().getLocalizacao();
 		}
 		// DONE fazer este método
 		return tempoTotal;
@@ -153,12 +147,14 @@ public class Camiao {
 	 * @param nLitros oslitros que o posto extra precisa
 	 * @return tempo, em segundos, que demora a fazer o itinerário mais o posto extra
 	 */
+
+	//Refazer o metodo do turno extra
 	public double duracaoTurnoExtra( Posto extra, int nLitros ) {
 		double tempoTotal = duracaoTurno(); // get the total time for the current route
 
 		// calculate the time to travel to the extra stop from the last stop in the itinerary
-		Point ultimaLocalizacao = Camiao.getItinerario().getUltimaParagem().getLocalizacao();
-		tempoTotal += tempoPercorrer(ultimaLocalizacao, extra.getLocalizacao());
+		//Point ultimaLocalizacao = Camiao.getItinerario().getUltimaParagem().getLocalizacao();
+		//tempoTotal += tempoPercorrer(ultimaLocalizacao, extra.getLocalizacao());
 
 		// add the time to unload at the extra stop
 		tempoTotal += tempoDespejar(nLitros);
@@ -170,21 +166,22 @@ public class Camiao {
 	 * para todos os postos no itinerário
 	 */
 	public void transporta( ){
-		for (Posto posto : itinerario.getParagens()) {
+		for (Paragem paragem : itinerario.getParagens()) {
 			// Verificar se o camião tem combustível suficiente para abastecer o posto
-			if (quantidadeCombusAtual >= posto.getQuantidadeAtual()) {
+			if (quantidadeCombusAtual >= paragem.getLitrosParaDepositar()) {
 				// Transferir combustível do camião para o posto
-				quantidadeCombusAtual -= posto.getQuantidadeAtual();
-				posto.setQuantidadeAtual(0);
+				quantidadeCombusAtual -= paragem.getLitrosParaDepositar();
+				paragem.setLitrosParaDepositar(paragem.getLitrosParaDepositar());
 			} else {
 				// Se o camião não tem combustível suficiente, transferir
 				// odo o combustível disponível
-				posto.setQuantidadeAtual(posto.getQuantidadeAtual() - quantidadeCombusAtual);
+				paragem.setLitrosParaDepositar(paragem.getLitrosParaDepositar() - quantidadeCombusAtual);
 				quantidadeCombusAtual = 0;
 			}
 
 			// Atualizar a localização do camião para a localização do posto
-			localizacao = posto.getLocalizacao();
+			localizacao = paragem.getPosto().getLocalizacao();
+
 
 			// Se o camião está vazio, não há necessidade de continuar o itinerário
 			if (quantidadeCombusAtual == 0) {

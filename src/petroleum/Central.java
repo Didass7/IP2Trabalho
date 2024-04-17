@@ -2,6 +2,7 @@ package petroleum;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /** Classe que representa a central de distribuição de combústivel.
@@ -11,14 +12,15 @@ import java.util.List;
 
 public class Central {
 
-		public static List<Posto> postos;
-		public static List<Camiao>camioes;
-		public Point armazenarCentral;
-		private static Point posicao;
+		private  List<Posto> postos = new ArrayList<Posto>();
+		private List<Camiao>camioes = new ArrayList<Camiao>();
+		private Point posicao;
 
+	public Central( Point posicao) {
+		this.posicao = posicao;
+	}
 
-
-	public static Point getPosicao() {
+	public Point getPosicao() {
 		return posicao;
 	}
 
@@ -26,33 +28,28 @@ public class Central {
 		this.posicao = posicao;
 	}
 
-	public static List<Posto> getPostos() {
-		return postos;
+	public void addPosto(Posto posto) {
+		this.postos.add(posto);
 	}
 
-	public void setPostos(List<Posto> postos) {
-		Central.postos = postos;
+	public void removePosto(Posto posto) {
+		this.postos.remove(posto);
 	}
 
-	public Point getArmazenarCentral() {
-		return armazenarCentral;
+	public  List<Posto> getPostos() {
+		return Collections.unmodifiableList( postos );
 	}
 
-	public void setArmazenarCentral(Point armazenarCentral) {
-		this.armazenarCentral = armazenarCentral;
+
+	public void addCamiao(Camiao camiao) {
+		this.camioes.add(camiao);
 	}
 
-	public static List<Camiao> getCamioes() {
-		return camioes;
+	public void removeCamiao(Camiao camiao) {
+		this.camioes.remove(camiao);
 	}
-
-	public void setCamioes(List<Camiao> camioes) {
-		this.camioes = camioes;
-	}
-
-	public Central(List<Posto> postos, List<Camiao> camioes) {
-		this.postos  = postos;
-		this.camioes = camioes;
+	public List<Camiao> getCamioes() {
+		 return Collections.unmodifiableList( camioes );
 	}
 
 
@@ -113,8 +110,9 @@ public class Central {
 	 */
 
 	public int processarEntrega(Posto posto, int litros, Camiao camiao) {
-		if (!posto.temPedidoPendente()){
-			return POSTO_NAO_PRECISA;
+		System.out.println(posto.temPedidoPendente());
+		if (posto.temPedidoPendente()){
+			return ACEITE;
 		}
 
 		if (litros > camiao.capacidadeLivre()){
@@ -122,7 +120,7 @@ public class Central {
 		}
 
 		// Verificar se a entrega excede o tempo de turno do camião
-		if (camiao.tempoParaEntrega(posto) > Camiao.TEMPO_TURNO) {
+		if (camiao.duracaoTurnoExtra(posto, litros) > Camiao.TEMPO_TURNO) {
 			return EXCEDE_TEMPO_TURNO;
 		}
 
@@ -131,7 +129,7 @@ public class Central {
 		}
 
 		// Adicionar o pedido ao camião
-		camiao.podeFazerPedido(posto, litros);
+		camiao.addPosto(posto, litros);
 		return ACEITE;
 	}
 

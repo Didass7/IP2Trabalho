@@ -2,6 +2,7 @@ package petroleum;
 
 import java.util.ArrayList;
 import java.awt.Point;
+import java.util.Collections;
 import java.util.List;
 
 /** Um itinerário é um conjunto de paragens.<br>
@@ -10,13 +11,8 @@ import java.util.List;
  */
 public class Itinerario {
 
-	private List<Posto> paragens;
+	private List<Paragem> paragens;
 	private Point pontoPartida;
-
-
-	public int tamanho(){
-		return paragens.size();
-	}
 
 	public Itinerario (Point pontoPartida){
 
@@ -27,10 +23,12 @@ public class Itinerario {
 	public void adicionaParagem(Posto posto,int litrosParaDepositar){
 
 		Paragem paragem= new Paragem(posto,litrosParaDepositar);
-		paragens.add(paragem.getPosto());
+		paragens.add(paragem);
 	}
 
-
+	public int tamanho(){
+		return paragens.size();
+	}
 
 	public Point getPontoPartida() {
 		return pontoPartida;
@@ -41,12 +39,16 @@ public class Itinerario {
 	}
 
 
-	public List<Posto> getParagens() {
-		return paragens;
+	public void addParagem(Paragem paragem) {
+		this.paragens.add(paragem);
 	}
 
-	public void setParagens(List<Posto> paragens) {
-		this.paragens = paragens;
+	public void removeParagem(Paragem paragem) {
+		this.paragens.remove(paragem);
+	}
+
+	public List<Paragem> getParagens() {
+		return Collections.unmodifiableList( paragens );
 	}
 
 	/** retorna o ponto de inicio do itenerário
@@ -66,21 +68,21 @@ public class Itinerario {
 	}
 
 	public Posto getUltimaParagem() {
-		return paragens.size() == 0 ? null : paragens.get(paragens.size() - 1);
-	}
-
-	public Point paragem (int i){
-		if (i>=0 && i<paragens.size())
-			return paragens.get(i).getLocalizacao();
-		else
-			return null;
+		return paragens.size() == 0 ? null : paragens.get(paragens.size() - 1).getPosto();
 	}
 
 	public int contarParagens(){
 		return paragens.size();
 	}
 
-	public boolean itinerarioValido(){
-		return pontoPartida != null && pontoPartida.equals(paragens.get(paragens.size() - 1));
+	public Point paragem (int i){
+		if (i>=0 && i<paragens.size())
+			return paragens.get(i).getPosto().getLocalizacao();
+		else
+			return null;
 	}
+
+
+
+
 }
