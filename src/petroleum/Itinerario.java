@@ -12,12 +12,7 @@ public class Itinerario {
 
 	private List<Posto> paragens;
 	private Point pontoPartida;
-	private Itinerario itinerarioAtual;
 
-	public Itinerario(Itinerario itinerarioAtual) {
-		this.itinerarioAtual = itinerarioAtual;
-	}
-//private int ou string pontoPartida;
 
 	public int tamanho(){
 		return paragens.size();
@@ -72,5 +67,20 @@ public class Itinerario {
 
 	public Posto getUltimaParagem() {
 		return paragens.size() == 0 ? null : paragens.get(paragens.size() - 1);
+	}
+
+	public Point paragem (int i){
+		if (i>=0 && i<paragens.size())
+			return paragens.get(i).getLocalizacao();
+		else
+			return null;
+	}
+
+	public int contarParagens(){
+		return paragens.size();
+	}
+
+	public boolean itinerarioValido(){
+		return pontoPartida != null && pontoPartida.equals(paragens.get(paragens.size() - 1));
 	}
 }

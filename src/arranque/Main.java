@@ -41,11 +41,11 @@ public class Main {
 
         //DONE criar os camiões
         //DONE criar lista camioes
-        Camiao camiao1 = new Camiao("11-FG-33", 20000, 65, 20);
-        Camiao camiao2 = new Camiao("22-DV-22", 30000, 50, 30);
-        Camiao camiao3 = new Camiao("AA-34-BB", 35000, 70, 30);
-        Camiao camiao4 = new Camiao("CF-65-FC", 40000, 45, 40);
-        Camiao camiao5 = new Camiao("AZ-75-PO", 25000, 55, 50);
+        Camiao camiao1 = new Camiao("11-FG-33", 0,20000, 65, 20);
+        Camiao camiao2 = new Camiao("22-DV-22", 0,30000, 50, 30);
+        Camiao camiao3 = new Camiao("AA-34-BB", 0,35000, 70, 30);
+        Camiao camiao4 = new Camiao("CF-65-FC", 0,40000, 45, 40);
+        Camiao camiao5 = new Camiao("AZ-75-PO", 0,25000, 55, 50);
 
 
         List<Posto> postos = new ArrayList<>();

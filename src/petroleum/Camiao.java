@@ -75,13 +75,16 @@ public class Camiao {
 		this.matricula = matricula;
 	}
 
-	public Camiao(String matricula,int capacidadeLitros, int velocidadeMediaKm, int debitoLs) {
+
+
+	public Camiao(String matricula,int quantidadeCombusAtual, int capacidadeLitros, int velocidadeMediaKm, int debitoLs) {
 
 		this.matricula = matricula;
 		this.capacidadeLitros = capacidadeLitros;
 		this.velocidadeMediaKm = velocidadeMediaKm;
 		this.debitoLs = debitoLs;
-
+		this.quantidadeCombusAtual = quantidadeCombusAtual;
+		this.itinerario= new Itinerario(Central.getPosicao());
 
 	}
 
@@ -121,12 +124,12 @@ public class Camiao {
 	 */
 	public int addPosto( Posto p, int litros ) {
 		// FEITO! fazer este método
-
-		if (podeFazerPedido(p, litros) == Central.ACEITE) {
+		int pedido = podeFazerPedido(p, litros);
+		if (pedido == Central.ACEITE) {
 			itinerario.adicionaParagem(p, litros);
 		}
 
-		return Central.ACEITE;
+		return pedido;
 	}
 
 	/** retorna o tempo, em segundos, que demora a fazer o itinerário

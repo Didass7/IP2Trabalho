@@ -13,6 +13,7 @@ import java.awt.Stroke;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Line2D;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
@@ -101,6 +102,7 @@ public class JanelaControlo extends JFrame {
 		// TODO ver a posição da central (não usar o valor direto, como está)
 		Point pos = central.getPosicao();
 
+
 		// desenhar a central
 		refinaria.paintIcon(null, g, pos.x - refinaria.getIconWidth() / 2, pos.y - refinaria.getIconHeight());
 		g.setColor(Color.red);
@@ -119,19 +121,20 @@ public class JanelaControlo extends JFrame {
 
 			if (iti != null) {
 				// TODO para cada ponto desenhar uma linha entre esse e o anterior
-				// p1 é sempre o anterior, p2 é sempre o atual
+				/// p1 é sempre o anterior, p2 é sempre o atual
 				Point p1 = iti.getInicio();
-				for (int i = 0; i < iti.tamanho(); i++) {
-					Posto posto = iti.getParagens().get(i); // TODO usar o for correto
-					Point p2 = posto.getLocalizacao();        // TODO próximo ponto no itinerário
+				for (int i = 0; i < iti.contarParagens() - 1; i++) {
+
+					//Posto posto = iti.getParagens().get(i); // TODO usar o for correto
+					Point p2 = iti.paragem(i);        // TODO próximo ponto no itinerário
 					desenhaLinha(ge, p1, p2);
 					p1 = p2;
 				}
 				Point p2 = iti.getInicio(); // e acaba no início
 				desenhaLinha(ge, p1, p2);
-
 			}
 		}
+
 		ge.dispose();
 
 	}

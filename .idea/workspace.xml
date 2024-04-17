@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54ce9548-5f8e-42ac-965e-e1f14623c052" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_2024_22_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_2024_22_41__Changes_.xml" afterDir="false" />
+    <list default="true" id="54ce9548-5f8e-42ac-965e-e1f14623c052" name="Changes" comment="janela de controlo feita">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/arranque/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arranque/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menu/JanelaControlo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/JanelaControlo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/RendererCamiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/RendererCamiao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/petroleum/Camiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Camiao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/petroleum/Central.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Central.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/petroleum/Itinerario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Itinerario.java" afterDir="false" />
     </list>
-    <list id="f6f615ed-1095-4ea2-84ee-29a18281b5e5" name="Changes by Diogo_Santos" comment="">
-      <change beforePath="$PROJECT_DIR$/src/menu/RendererCamiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/RendererCamiao.java" afterDir="false" />
+    <list id="fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e" name="Changes by Diogo_Santos" comment="">
+      <change beforePath="$PROJECT_DIR$/src/menu/JanelaControlo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/JanelaControlo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +36,18 @@
     &quot;accountId&quot;: &quot;6fdabb10-5ec8-4114-bd97-e47100f297cd&quot;
   }
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/menu/JanelaControlo.java">
+      <ranges>
+        <range start1="15" end1="15" start2="15" end2="16" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
+        <range start1="102" end1="102" start2="103" end2="104" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
+        <range start1="121" end1="122" start2="123" end2="124" changelist="fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e" />
+        <range start1="123" end1="126" start2="125" end2="129" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
+        <range start1="131" end1="132" start2="134" end2="134" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
+        <range start1="134" end1="134" start2="136" end2="137" changelist="fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -74,6 +86,30 @@
       <option name="presentableId" value="Default" />
       <updated>1712246415900</updated>
     </task>
+    <task id="LOCAL-00001" summary="janela de controlo feita">
+      <option name="closed" value="true" />
+      <created>1713314050517</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713314050517</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="janela de controlo feita" />
+    <option name="LAST_COMMIT_MESSAGE" value="janela de controlo feita" />
   </component>
 </project>

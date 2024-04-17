@@ -14,12 +14,12 @@ public class Central {
 		public static List<Posto> postos;
 		public static List<Camiao>camioes;
 		public Point armazenarCentral;
-		private Point posicao;
+		private static Point posicao;
 
 
 
-	public Point getPosicao() {
-		return this.posicao;
+	public static Point getPosicao() {
+		return posicao;
 	}
 
 	public void setPosicao(Point posicao) {
@@ -91,13 +91,11 @@ public class Central {
 	 */
 	public Posto getPosto( int id ) {
 		// FEITO! fazer este método
-		if (postos!=null){
 			for (Posto posto: postos){
 				if (posto.getCodigoNumerico()==id){
 					return posto;
 				}
 			}
-		}
 		return null;
 	}
 
