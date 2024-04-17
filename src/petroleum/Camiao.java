@@ -150,16 +150,10 @@ public class Camiao {
 
 	//Refazer o metodo do turno extra
 	public double duracaoTurnoExtra( Posto extra, int nLitros ) {
-		double tempoTotal = duracaoTurno(); // get the total time for the current route
 
-		// calculate the time to travel to the extra stop from the last stop in the itinerary
-		//Point ultimaLocalizacao = Camiao.getItinerario().getUltimaParagem().getLocalizacao();
-		//tempoTotal += tempoPercorrer(ultimaLocalizacao, extra.getLocalizacao());
-
-		// add the time to unload at the extra stop
-		tempoTotal += tempoDespejar(nLitros);
-
-		return tempoTotal;
+		double velocidadeMediaSegs = velocidadeMediaKm + (1000/3600);
+		double tempoSegs = (dis / velocidadeMediaSegs) + debitoLs;
+		return tempoSegs;
 	}
 
 	/** Efetua o transporte e transferência de combustível
@@ -176,7 +170,7 @@ public class Camiao {
 				// Se o camião não tem combustível suficiente, transferir
 				// odo o combustível disponível
 				paragem.setLitrosParaDepositar(paragem.getLitrosParaDepositar() - quantidadeCombusAtual);
-				quantidadeCombusAtual = 0;
+
 			}
 
 			// Atualizar a localização do camião para a localização do posto
@@ -250,9 +244,9 @@ public class Camiao {
 		return this.localizacao;
 	}
 
-	public double tempoParaEntrega(Posto posto) {
+	/*public double tempoParaEntrega(Posto posto) {
 		double tempoPercorrer = tempoPercorrer(this.getLocalizacao(), posto.getLocalizacao());
 		double tempoDespejar = tempoDespejar(posto.getQuantidadeAtual());
 		return tempoPercorrer + tempoDespejar;
-	}
+	}*/
 }

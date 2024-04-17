@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Central {
 
-		private  List<Posto> postos = new ArrayList<Posto>();
+		private List<Posto> postos = new ArrayList<Posto>();
 		private List<Camiao>camioes = new ArrayList<Camiao>();
 		private Point posicao;
 
@@ -28,26 +28,26 @@ public class Central {
 		this.posicao = posicao;
 	}
 
-	public void addPosto(Posto posto) {
-		this.postos.add(posto);
-	}
-
 	public void removePosto(Posto posto) {
 		this.postos.remove(posto);
+	}
+
+	public void removeCamiao(Camiao camiao) {
+		this.camioes.remove(camiao);
+	}
+
+	public void addCamiao(Camiao camiao) {
+		this.camioes.add(camiao);
+	}
+
+	public void addPosto(Posto posto) {
+		this.postos.add(posto);
 	}
 
 	public  List<Posto> getPostos() {
 		return Collections.unmodifiableList( postos );
 	}
 
-
-	public void addCamiao(Camiao camiao) {
-		this.camioes.add(camiao);
-	}
-
-	public void removeCamiao(Camiao camiao) {
-		this.camioes.remove(camiao);
-	}
 	public List<Camiao> getCamioes() {
 		 return Collections.unmodifiableList( camioes );
 	}
@@ -110,28 +110,26 @@ public class Central {
 	 */
 
 	public int processarEntrega(Posto posto, int litros, Camiao camiao) {
+
 		System.out.println(posto.temPedidoPendente());
-		if (posto.temPedidoPendente()){
-			return ACEITE;
+
+		if (posto.temPedidoPendente()) {
+			return Central.ACEITE;
 		}
 
-		if (litros > camiao.capacidadeLivre()){
-			return EXCEDE_CAPACIDADE_CAMIAO;
+		// Verifica se o posto tem capacidade para armazenar os litros indicados
+		if (litros > posto.capacidadeLivre()) {
+			return Central.EXCEDE_CAPACIDADE_POSTO;
 		}
+		int adicionaPostoItinerario = camiao.addPosto(posto, litros);
 
-		// Verificar se a entrega excede o tempo de turno do camião
-		if (camiao.duracaoTurnoExtra(posto, litros) > Camiao.TEMPO_TURNO) {
-			return EXCEDE_TEMPO_TURNO;
+		if (adicionaPostoItinerario == Central.ACEITE) {
+			// Atualiza a quantidade de combustível do posto
+			posto.setQuantidadeAtual(posto.getQuantidadeAtual() + litros);
 		}
-
-		if (litros + posto.getQuantidadeAtual() > posto.getCapacidadeMaximaCombus()) {
-			return EXCEDE_CAPACIDADE_POSTO;
-		}
-
-		// Adicionar o pedido ao camião
-		camiao.addPosto(posto, litros);
-		return ACEITE;
+		return adicionaPostoItinerario;
 	}
+
 
 
 	/* finaliza um turno, isto é, realiza os itinerários e
