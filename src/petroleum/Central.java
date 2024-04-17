@@ -161,11 +161,8 @@ public class Central {
 	private void processarGastosPostos() {
 		// DONE? fazer este método
 		for (Posto posto : postos) {
-			// Calcular o gasto com base na quantidade de combustível entregue
-			double gasto = posto.getQuantidadeAtual() * posto.getGastoDiarioMedioCombus();
-
-			// Processar o gasto
-			posto.setGastoDiarioMedioCombus((int) gasto);
+			// Atribuir o gasto diário médio de combustível ao gasto do posto
+			posto.setGastoDiarioMedioCombus(posto.getGastoDiarioMedioCombus());
 		}
 	}
 }

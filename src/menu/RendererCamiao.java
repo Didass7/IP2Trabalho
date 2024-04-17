@@ -33,7 +33,7 @@ public class RendererCamiao implements ListCellRenderer<Camiao> {
 	private Color naoSelColor;
 
 
-	public RendererCamiao(  ) {
+	public RendererCamiao( ) {
 		Dimension size = new Dimension( camiaoIcon.getIconWidth(), camiaoIcon.getIconHeight() );
 		JPanel panel = new JPanel(){
 			@Override

@@ -33,11 +33,11 @@ public class Main {
         Posto p13 = new Posto(13, "Linhir", new Point(1110, 1180), 1900, 5000, 30000);
         Posto p14 = new Posto(14, "Dom Beornd", new Point(1090, 240), 1600, 5000, 30000);
         Posto p15 = new Posto(15, "Harlond", new Point(175, 400), 2000, 8000, 30000);
-        Posto p16 = new Posto(16, "Oliveira do Hospital", new Point(160, 123), 1000, 10000, 30000);
-        Posto p17 = new Posto(17, "Caldas da Rainha", new Point(214, 124), 1324, 12000, 25000);
-        Posto p18 = new Posto(18, "Castelo Branco", new Point(241, 1200), 2100, 23000, 26000);
-        Posto p19 = new Posto(19, "Alcains", new Point(512, 1294), 2130, 2134, 4212);
-        Posto p20 = new Posto(20, "Idanha", new Point(873, 2394), 2312, 2345, 1234);
+        Posto p16 = new Posto(16, "Oliveira do Hospital", new Point(1600, 123), 1000, 10000, 30000);
+        Posto p17 = new Posto(17, "Caldas da Rainha", new Point(700, 124), 1324, 12000, 25000);
+        Posto p18 = new Posto(18, "Castelo Branco", new Point(1753, 1200), 2100, 23000, 26000);
+        Posto p19 = new Posto(19, "Alcains", new Point(1100, 1294), 2130, 2134, 4212);
+        Posto p20 = new Posto(20, "Idanha", new Point(873, 210), 2312, 2345, 1234);
 
         //DONE criar os camiões
         //DONE criar lista camioes

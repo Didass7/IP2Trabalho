@@ -12,9 +12,16 @@ public class Itinerario {
 
 	private List<Posto> paragens;
 	private Point pontoPartida;
+	private Itinerario itinerarioAtual;
 
+	public Itinerario(Itinerario itinerarioAtual) {
+		this.itinerarioAtual = itinerarioAtual;
+	}
+//private int ou string pontoPartida;
 
-	//private int ou string pontoPartida;
+	public int tamanho(){
+		return paragens.size();
+	}
 
 	public Itinerario (Point pontoPartida){
 

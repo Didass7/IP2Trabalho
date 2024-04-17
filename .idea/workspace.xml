@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54ce9548-5f8e-42ac-965e-e1f14623c052" name="Changes" comment="erros concertados, postos no mapa">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="54ce9548-5f8e-42ac-965e-e1f14623c052" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_2024_22_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_2024_22_41__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/arranque/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arranque/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menu/JanelaControlo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/JanelaControlo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menu/MarcadorPosto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/MarcadorPosto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/petroleum/Camiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Camiao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/petroleum/Central.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Central.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/petroleum/Itinerario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Itinerario.java" afterDir="false" />
     </list>
-    <list id="92ab6941-95ed-4dcf-904c-7ca2df572e2b" name="Changes by Diogo_Santos" comment="">
-      <change beforePath="$PROJECT_DIR$/src/menu/JanelaControlo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/JanelaControlo.java" afterDir="false" />
+    <list id="f6f615ed-1095-4ea2-84ee-29a18281b5e5" name="Changes by Diogo_Santos" comment="">
       <change beforePath="$PROJECT_DIR$/src/menu/RendererCamiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/RendererCamiao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/petroleum/Camiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Camiao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/petroleum/Posto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Posto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,44 +33,9 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Didass7/IP2Trabalho.git&quot;,
-    &quot;accountId&quot;: &quot;f28f88d0-76c3-4b18-8c25-9865861a48ed&quot;
+    &quot;accountId&quot;: &quot;6fdabb10-5ec8-4114-bd97-e47100f297cd&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/menu/JanelaControlo.java">
-      <ranges>
-        <range start1="41" end1="41" start2="41" end2="42" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="64" end1="65" start2="65" end2="66" changelist="92ab6941-95ed-4dcf-904c-7ca2df572e2b" />
-        <range start1="71" end1="72" start2="72" end2="73" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="77" end1="78" start2="78" end2="79" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="87" end1="88" start2="88" end2="89" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="92" end1="94" start2="93" end2="95" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="95" end1="99" start2="96" end2="100" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="100" end1="103" start2="101" end2="104" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="104" end1="105" start2="105" end2="106" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="107" end1="109" start2="108" end2="109" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="110" end1="119" start2="110" end2="111" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/petroleum/Camiao.java">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="4" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="19" end1="19" start2="20" end2="21" changelist="92ab6941-95ed-4dcf-904c-7ca2df572e2b" />
-        <range start1="20" end1="20" start2="22" end2="24" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="75" end1="75" start2="79" end2="80" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="95" end1="97" start2="100" end2="105" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="109" end1="110" start2="117" end2="123" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="117" end1="119" start2="130" end2="139" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="128" end1="130" start2="148" end2="158" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="136" end1="137" start2="164" end2="186" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="146" end1="148" start2="195" end2="204" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="155" end1="157" start2="211" end2="219" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="163" end1="165" start2="225" end2="227" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="171" end1="174" start2="233" end2="236" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-        <range start1="175" end1="175" start2="237" end2="252" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -87,21 +48,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\diogo\IdeaProjects\IP2Projeto\src" />
-      <recent name="C:\Users\diogo\IdeaProjects\IP2Projeto\src\menu" />
+      <recent name="C:\Users\diogo\IdeaProjects\IP2Trabalho\src" />
       <recent name="C:\Users\diogo\IdeaProjects\IP2Projeto" />
+      <recent name="C:\Users\diogo\IdeaProjects\IP2Projeto\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -113,56 +74,6 @@
       <option name="presentableId" value="Default" />
       <updated>1712246415900</updated>
     </task>
-    <task id="LOCAL-00001" summary="ola">
-      <option name="closed" value="true" />
-      <created>1712265792108</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1712265792108</updated>
-    </task>
-    <task id="LOCAL-00002" summary="fds">
-      <option name="closed" value="true" />
-      <created>1713048557918</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1713048557918</updated>
-    </task>
-    <task id="LOCAL-00003" summary="fds">
-      <option name="closed" value="true" />
-      <created>1713048700046</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1713048700046</updated>
-    </task>
-    <task id="LOCAL-00004" summary="erros concertados, postos no mapa">
-      <option name="closed" value="true" />
-      <created>1713048989202</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1713048989203</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="ola" />
-    <MESSAGE value="fds" />
-    <MESSAGE value="erros concertados, postos no mapa" />
-    <option name="LAST_COMMIT_MESSAGE" value="erros concertados, postos no mapa" />
   </component>
 </project>

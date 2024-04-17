@@ -19,8 +19,13 @@ public class Camiao {
 	private String matricula;
 	private static Itinerario itinerario;
 	private Point localizacao;
+	private Itinerario itinerarioAtual;
 
 
+
+	public Itinerario getItinerarioAtual() {
+		return this.itinerarioAtual;
+	}
 
 	public int getCapacidadeLitros() {
 		return capacidadeLitros;
