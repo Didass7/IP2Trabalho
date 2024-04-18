@@ -96,7 +96,7 @@ public class MarcadorPosto {
 		icon.paintIcon(null, g, area.x, area.y);
 		
 		// FEITO! ver se posto tem pedido pendente
-		if(posto.temPedidoPendente() )
+		if(false )
 			pedindo.paintIcon(null, g, area.x, area.y);
 	}
 	

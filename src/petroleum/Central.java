@@ -111,24 +111,36 @@ public class Central {
 
 	public int processarEntrega(Posto posto, int litros, Camiao camiao) {
 
-		System.out.println(posto.temPedidoPendente());
-
+		/*System.out.println(posto.temPedidoPendente());
 		if (posto.temPedidoPendente()) {
 			return ACEITE;
 		}
-
 		// Verifica se o posto tem capacidade para armazenar os litros indicados
 		if (litros > posto.capacidadeLivre()) {
 			return EXCEDE_CAPACIDADE_POSTO;
 		}
 		int adicionaPostoItinerario = camiao.addPosto(posto, litros);
-
-
 		if (adicionaPostoItinerario == ACEITE) {
 			// Atualiza a quantidade de combustível do posto
 			posto.setQuantidadeAtual(posto.getQuantidadeAtual() + litros);
 		}
 		return adicionaPostoItinerario;
+	}
+*/
+		if (litros > camiao.capacidadeLivre()) {
+			return EXCEDE_CAPACIDADE_CAMIAO;
+		}
+		if (camiao.duracaoTurnoExtra(posto, litros) > Camiao.TEMPO_TURNO) {
+			return EXCEDE_TEMPO_TURNO;
+		}
+		if (posto.percentagemOcupacao() >= Posto.OCUPACAO_SUFICIENTE) {
+			return POSTO_NAO_PRECISA;
+		}
+		if ((posto.getQuantidadeAtual() + litros) > posto.getCapacidadeMaximaCombus()) {
+			return EXCEDE_CAPACIDADE_POSTO;
+		}
+		camiao.addPosto(posto, litros);
+		return ACEITE;
 	}
 
 

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54ce9548-5f8e-42ac-965e-e1f14623c052" name="Changes" comment="progresso">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_23_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_23_08__Changes_.xml" afterDir="false" />
+    <list default="true" id="54ce9548-5f8e-42ac-965e-e1f14623c052" name="Changes" comment="butão proximo turno funcional">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/MarcadorPosto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/MarcadorPosto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/RendererCamiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/RendererCamiao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/petroleum/Camiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Camiao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/petroleum/Central.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Central.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/petroleum/Posto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Posto.java" afterDir="false" />
@@ -102,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713048989203</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="butão proximo turno funcional">
+      <option name="closed" value="true" />
+      <created>1713441702440</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713441702440</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +129,7 @@
     <MESSAGE value="ola" />
     <MESSAGE value="fds" />
     <MESSAGE value="erros concertados, postos no mapa" />
-    <option name="LAST_COMMIT_MESSAGE" value="erros concertados, postos no mapa" />
+    <MESSAGE value="butão proximo turno funcional" />
+    <option name="LAST_COMMIT_MESSAGE" value="butão proximo turno funcional" />
   </component>
 </project>

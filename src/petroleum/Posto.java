@@ -96,23 +96,21 @@ public class Posto {
      */
     public int enche(int nLitros) {
         // FEITO! fazer este método
-        //Teste do nosso melhor amigo
 
         // Verificar se o posto tem capacidade para armazenar os litros indicados
-        if (quantidadeAtual + nLitros <= capacidadeMaximaCombus) {
-            // Adicionar os litros ao depósito do posto
-            quantidadeAtual += nLitros;
 
             // Verificar se a ocupação do posto é suficiente para aceitar novos pedidos de abastecimento
             if (percentagemOcupacao() >= OCUPACAO_SUFICIENTE) {
-                return Central.ACEITE; // O pedido foi adicionado ao camião
-            } else {
-                return Central.POSTO_NAO_PRECISA; // O posto não necessita de ser abastecido no momento
+                return Central.POSTO_NAO_PRECISA; // O pedido foi adicionado ao camião
+            } else if (capacidadeLivre()<nLitros) {
+
+                return Central.EXCEDE_CAPACIDADE_POSTO; // O posto não necessita de ser abastecido no momento
             }
-        } else {
-            return Central.EXCEDE_CAPACIDADE_POSTO; // O posto não tem capacidade de armazenar os litros indicados
+            quantidadeAtual += nLitros;
+            return Central.ACEITE; // O posto não tem capacidade de armazenar os litros indicados
+
         }
-    }
+
 
     /* retorna a capacidade livre, isto é, quantos
      * litros ainda podem ser armazenados no posto
