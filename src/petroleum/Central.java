@@ -114,16 +114,17 @@ public class Central {
 		System.out.println(posto.temPedidoPendente());
 
 		if (posto.temPedidoPendente()) {
-			return Central.ACEITE;
+			return ACEITE;
 		}
 
 		// Verifica se o posto tem capacidade para armazenar os litros indicados
 		if (litros > posto.capacidadeLivre()) {
-			return Central.EXCEDE_CAPACIDADE_POSTO;
+			return EXCEDE_CAPACIDADE_POSTO;
 		}
 		int adicionaPostoItinerario = camiao.addPosto(posto, litros);
 
-		if (adicionaPostoItinerario == Central.ACEITE) {
+
+		if (adicionaPostoItinerario == ACEITE) {
 			// Atualiza a quantidade de combustível do posto
 			posto.setQuantidadeAtual(posto.getQuantidadeAtual() + litros);
 		}
@@ -153,10 +154,19 @@ public class Central {
 	/** processa os gastos dos postos
 	 */
 	private void processarGastosPostos() {
-		// DONE? fazer este método
+		// TODO fazer este método
 		for (Posto posto : postos) {
-			// Atribuir o gasto diário médio de combustível ao gasto do posto
-			posto.setGastoDiarioMedioCombus(posto.getGastoDiarioMedioCombus());
+			// Deduz o consumo diário da quantidade atual de combustível
+			int quantidadeCombustivelAtual = posto.getQuantidadeAtual();
+			quantidadeCombustivelAtual -= (int) posto.getGastoDiarioMedioCombus();
+
+			// Certifica-se de que a quantidade atual não seja negativa
+			if (quantidadeCombustivelAtual < 0) {
+				quantidadeCombustivelAtual = 0;
+			}
+
+			// Atualiza a quantidade atual de combustível do posto
+			posto.setQuantidadeAtual(quantidadeCombustivelAtual);
 		}
 	}
 }

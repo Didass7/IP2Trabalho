@@ -82,6 +82,8 @@ public class Camiao {
 
 	}
 
+
+
 	/** o tempo máximo de um turno, que são as 14 horas
 	 * (2 condutores), dadas em segundos */
 	public static final int TEMPO_TURNO = 14 * 3600;
@@ -151,9 +153,7 @@ public class Camiao {
 	//Refazer o metodo do turno extra
 	public double duracaoTurnoExtra( Posto extra, int nLitros ) {
 
-		double velocidadeMediaSegs = velocidadeMediaKm + (1000/3600);
-		double tempoSegs = (dis / velocidadeMediaSegs) + debitoLs;
-		return tempoSegs;
+		return 0;
 	}
 
 	/** Efetua o transporte e transferência de combustível
@@ -194,12 +194,10 @@ public class Camiao {
 	private double tempoPercorrer( Point ini, Point fim ){
 		// FEITO! terminar este método (distância / velocidade)
 
-		if((ini==null|| fim==null) && velocidadeMediaKm<0){
-			return -1;
-		}else{
-
-			return (Mapa.distancia(ini, fim))/ velocidadeMediaKm;
-		}
+		double distancia = Mapa.distancia(ini, fim); // Calcula a distância entre a localização atual e o destino
+		double velocidadeMediaKmPorSegundo = getVelocidadeMediaKm() / 3600.0;
+		double tempoViagem = distancia / velocidadeMediaKmPorSegundo; // Calcula o tempo de viagem com base na distância e na velocidade média
+		return tempoViagem;
 
 	}
 
@@ -243,10 +241,4 @@ public class Camiao {
 	public Point getLocalizacao() {
 		return this.localizacao;
 	}
-
-	/*public double tempoParaEntrega(Posto posto) {
-		double tempoPercorrer = tempoPercorrer(this.getLocalizacao(), posto.getLocalizacao());
-		double tempoDespejar = tempoDespejar(posto.getQuantidadeAtual());
-		return tempoPercorrer + tempoDespejar;
-	}*/
 }

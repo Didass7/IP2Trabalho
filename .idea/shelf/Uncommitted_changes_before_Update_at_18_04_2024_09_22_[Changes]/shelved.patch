@@ -1,0 +1,56 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"54ce9548-5f8e-42ac-965e-e1f14623c052\" name=\"Changes\" comment=\"erros concertados, postos no mapa\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_04_2024_23_25__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_04_2024_23_25__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/arranque/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/arranque/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/menu/JanelaControlo.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/menu/JanelaControlo.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/menu/MarcadorPosto.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/menu/MarcadorPosto.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/menu/RendererCamiao.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/menu/RendererCamiao.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/petroleum/Camiao.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/petroleum/Camiao.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/petroleum/Central.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/petroleum/Central.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/petroleum/Itinerario.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/petroleum/Itinerario.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/petroleum/Posto.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/petroleum/Posto.java\" afterDir=\"false\" />\r\n    </list>\r\n    <list id=\"92ab6941-95ed-4dcf-904c-7ca2df572e2b\" name=\"Changes by Diogo_Santos\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Didass7&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/Didass7/IP2Trabalho.git&quot;,\r\n    &quot;accountId&quot;: &quot;f28f88d0-76c3-4b18-8c25-9865861a48ed&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectCodeStyleSettingsMigration\">\r\n    <option name=\"version\" value=\"2\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2edtj2TbnmkuMuqrVlrPnwwCTvS\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.Main.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\diogo\\IdeaProjects\\IP2Projeto\\src\" />\r\n      <recent name=\"C:\\Users\\diogo\\IdeaProjects\\IP2Projeto\\src\\menu\" />\r\n      <recent name=\"C:\\Users\\diogo\\IdeaProjects\\IP2Projeto\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"54ce9548-5f8e-42ac-965e-e1f14623c052\" name=\"Changes\" comment=\"\" />\r\n      <created>1712246415900</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1712246415900</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"ola\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1712265792108</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1712265792108</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"fds\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713048557918</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713048557918</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"fds\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713048700046</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713048700046</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"erros concertados, postos no mapa\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713048989202</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713048989203</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"ola\" />\r\n    <MESSAGE value=\"fds\" />\r\n    <MESSAGE value=\"erros concertados, postos no mapa\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"erros concertados, postos no mapa\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 60f765b2091255b0001490125ac6d7049d429954)
++++ b/.idea/workspace.xml	(date 1713379311488)
+@@ -4,17 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="54ce9548-5f8e-42ac-965e-e1f14623c052" name="Changes" comment="erros concertados, postos no mapa">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_04_2024_23_25__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_04_2024_23_25__Changes_.xml" afterDir="false" />
++    <list default="true" id="54ce9548-5f8e-42ac-965e-e1f14623c052" name="Changes" comment="progresso">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/arranque/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arranque/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/menu/JanelaControlo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/JanelaControlo.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/menu/MarcadorPosto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/MarcadorPosto.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/menu/RendererCamiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/RendererCamiao.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/petroleum/Camiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Camiao.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/petroleum/Central.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Central.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/petroleum/Itinerario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Itinerario.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/petroleum/Posto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Posto.java" afterDir="false" />
+     </list>
+     <list id="92ab6941-95ed-4dcf-904c-7ca2df572e2b" name="Changes by Diogo_Santos" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+@@ -107,7 +98,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1713048989203</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="progresso">
++      <option name="closed" value="true" />
++      <created>1713379296750</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1713379296750</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -125,6 +124,7 @@
+     <MESSAGE value="ola" />
+     <MESSAGE value="fds" />
+     <MESSAGE value="erros concertados, postos no mapa" />
+-    <option name="LAST_COMMIT_MESSAGE" value="erros concertados, postos no mapa" />
++    <MESSAGE value="progresso" />
++    <option name="LAST_COMMIT_MESSAGE" value="progresso" />
+   </component>
+ </project>
+\ No newline at end of file

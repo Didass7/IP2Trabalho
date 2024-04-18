@@ -75,7 +75,7 @@ public class Posto {
         this.gastoDiarioMedioCombus = gastoDiarioMedioCombus;
         this.quantidadeAtual = quantidadeAtual;
         this.capacidadeMaximaCombus = capacidadeMaximaCombus;
-        //this.pedidoPendente;
+
 
     }
 
@@ -120,7 +120,7 @@ public class Posto {
      */
     public int capacidadeLivre() {
         // FEITO! fazer este método
-        return capacidadeMaximaCombus - quantidadeAtual;
+        return getCapacidadeMaximaCombus() - getQuantidadeAtual();
     }
 
     /* retorna a percentagem de ocupação do posto, entre 0 (0%) e 1 (100%)
@@ -128,7 +128,7 @@ public class Posto {
      */
     public float percentagemOcupacao() {
         // FEITO! fazer este método
-        return (float) quantidadeAtual / capacidadeMaximaCombus;
+        return (float) getQuantidadeAtual() / getCapacidadeMaximaCombus();
     }
 
     /* indica se o posto tem um pedido pendente
