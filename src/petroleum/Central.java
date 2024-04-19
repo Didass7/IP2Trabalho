@@ -12,14 +12,16 @@ import java.util.List;
 
 public class Central {
 
-		private List<Posto> postos = new ArrayList<Posto>();
-		private List<Camiao>camioes = new ArrayList<Camiao>();
-		private Point posicao;
+		private List<Posto> postos = new ArrayList<Posto>(); //lista de postos
+		private List<Camiao>camioes = new ArrayList<Camiao>(); //lista de camiões
+		private Point posicao; //posição da central
 
+	// construtor
 	public Central( Point posicao) {
 		this.posicao = posicao;
 	}
 
+	// métodos de acesso
 	public Point getPosicao() {
 		return posicao;
 	}
@@ -41,7 +43,7 @@ public class Central {
 	}
 
 
-// constantes para os erros que podem surgir udurante a realização das operações
+	// constantes para os erros que podem surgir udurante a realização das operações
 	/** Correu tudo bem com a operação */
 	public static final int ACEITE = 0;
 	/** Usada quando se pretende adicionar um pedido a um posto, mas este não precisa */
@@ -59,8 +61,10 @@ public class Central {
 	 */
 	public Camiao getCamiao(String matricula ) {
 		if(camioes!=null) {
+			//procura o camião com a matrícula indicada e se encontrar retorna-o
 			for (Camiao camiao : camioes) {
 				if (camiao.getMatricula().equals(matricula)) {
+					//
 					return camiao;
 				}
 			}
@@ -71,9 +75,9 @@ public class Central {
 
 	/** retorna o posto que tem um dado id
 	 * @param id id a pesquisar
-	 * @return o posto com o id, ou null se não existir
-	 */
+	 * @return o posto com o id, ou null se não existir */
 	public Posto getPosto( int id ) {
+		//procura o posto com o id indicado e se encontrar retorna-o
 			for (Posto posto: postos){
 				if (posto.getCodigoNumerico()==id){
 					return posto;
@@ -92,59 +96,66 @@ public class Central {
 	 *         ao que o camião tem disponível<br>
 	 *         EXCEDE_TEMPO_TURNO, se o pedido implicar um tempo maior que um turno
 	 *         POSTO_NAO_PRECISA, se o posto não necessita de ser abastecido
-	 *         EXCEDE_CAPACIDADE_POSTO, se o posto não tem capacidade de armazenar os litros indicados      
-	 */
+	 *         EXCEDE_CAPACIDADE_POSTO, se o posto não tem capacidade de armazenar os litros indicados */
 
 	public int processarEntrega(Posto posto, int litros, Camiao camiao) {
 
+		//verifica se o camião tem capacidade para armazenar os litros indicados
 		if (litros > camiao.capacidadeLivre()) {
 			return EXCEDE_CAPACIDADE_CAMIAO;
 		}
+		//verifica se o pedido implicar um tempo maior que um turno
 		if (camiao.duracaoTurnoExtra(posto, litros) > Camiao.TEMPO_TURNO) {
 			return EXCEDE_TEMPO_TURNO;
 		}
+		//verifica se o posto não necessita de ser abastecido
 		if (posto.percentagemOcupacao() >= Posto.OCUPACAO_SUFICIENTE) {
 			return POSTO_NAO_PRECISA;
 		}
+		//verifica se o posto tem capacidade para armazenar os litros indicados
 		if ((posto.getQuantidadeAtual() + litros) > posto.getCapacidadeMaximaCombus()) {
 			return EXCEDE_CAPACIDADE_POSTO;
 		}
+		//adiciona o pedido ao camião
 		camiao.addPosto(posto, litros);
 		return ACEITE;
 	}
 
 	/** finaliza um turno, isto é, realiza os itinerários e
-	 * processa os gastos dos postos 
-	 */
+	 * processa os gastos dos postos */
 	public void finalizarTurno() {
 		realizarItinerarios();
 		processarGastosPostos();
 	}
 	
 	/** realiza os itinerários, isto é, faz os camiões
-	 * transportar o combústivel para os postos adjudicados 
-	 */
+	 * transportar o combústivel para os postos adjudicados */
 	private void realizarItinerarios() {
 		for(Camiao camiao: camioes){
+			//faz o camião transportar o combústivel para os postos adjudicados
 			camiao.transporta();
 		}
 	}
 	
-	/** processa os gastos dos postos
-	 */
+	/** processa os gastos dos postos */
 	private void processarGastosPostos() {
 
 		for (Posto posto : postos) {
+			//para cada posto...
 			int quantidadeCombustivelAtual = posto.getQuantidadeAtual();
+			//variavel que guarda a quantidade de combustível atual do posto
 			quantidadeCombustivelAtual -= posto.getGastoDiarioMedioCombus();
+			//...diminui a quantidade de combustível atual do posto pelo gasto médio diário
 
 
 			if (quantidadeCombustivelAtual < 0) {
+				//se a quantidade de combustível for negativa, coloca-a a zero
 				quantidadeCombustivelAtual = 0;
 			}
 
 
 			posto.setQuantidadeAtual(quantidadeCombustivelAtual);
+			//atualiza a quantidade de combustível atual do posto
 		}
 	}
 }
