@@ -74,16 +74,15 @@ public class Camiao {
     }
 
 
-    public Camiao(String matricula, int capacidadeLitros, int velocidadeMediaKm, int debitoLs) {
+    public Camiao(String matricula, int capacidadeLitros, int velocidadeMediaKm, int debitoLs, Central central) {
 
         this.matricula = matricula;
         this.capacidadeLitros = capacidadeLitros;
         this.velocidadeMediaKm = velocidadeMediaKm;
         this.debitoLs = debitoLs;
         this.quantidadeCombusAtual=0;
-
-        this.itinerario = new Itinerario(new Point(505, 750));
-
+        this.itinerario = new Itinerario(central.getPosicao());
+        //Falta mudar o ponto de inicio do itinerario para ir buscar à Main
     }
 
     /** o tempo máximo de um turno, que são as 14 horas
@@ -184,9 +183,7 @@ public class Camiao {
 
     //Refazer o metodo do turno extra
     public double duracaoTurnoExtra(Posto extra, int nLitros) {
-
         double duracao=0;
-
         List<Paragem> paragens = itinerario.getParagens();
         if (paragens.isEmpty()){
             duracao +=  2*(tempoPercorrer(itinerario.getInicio(),extra.getLocalizacao()));
@@ -195,14 +192,15 @@ public class Camiao {
             return duracao;
         }
 
-        duracao += tempoPercorrer(getItinerario().getInicio(), paragens.get(0).getPosto().getLocalizacao());
-        duracao += tempoDespejar(paragens.get(0).getLitrosParaDepositar());;
+            duracao += tempoPercorrer(itinerario.getInicio(), paragens.get(0).getPosto().getLocalizacao());
+        for (int i = 1; i < paragens.size(); i++) {
+            duracao += tempoPercorrer(paragens.get(i).getPosto().getLocalizacao(), paragens.get(i - 1).getPosto().getLocalizacao());
+            duracao += tempoDespejar(paragens.get(i).getLitrosParaDepositar());
+        }
 
-
-        duracao += tempoPercorrer(paragens.get(paragens.size() - 1).getPosto().getLocalizacao(), getItinerario().getInicio());
-        duracao += tempoDespejar(paragens.get(paragens.size() - 1).getLitrosParaDepositar());
-
-
+        duracao += tempoPercorrer(paragens.get(paragens.size() - 1).getPosto().getLocalizacao(), extra.getLocalizacao());
+        duracao += tempoDespejar(nLitros);
+        duracao += tempoPercorrer(extra.getLocalizacao(), itinerario.getInicio());
 
         return duracao;
     }
