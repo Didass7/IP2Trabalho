@@ -170,7 +170,7 @@ public class Central {
 		for (Posto posto : postos) {
 			// Deduz o consumo diário da quantidade atual de combustível
 			int quantidadeCombustivelAtual = posto.getQuantidadeAtual();
-			quantidadeCombustivelAtual -= (int) posto.getGastoDiarioMedioCombus();
+			quantidadeCombustivelAtual -= posto.getGastoDiarioMedioCombus();
 
 			// Certifica-se de que a quantidade atual não seja negativa
 			if (quantidadeCombustivelAtual < 0) {

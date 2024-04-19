@@ -12,9 +12,7 @@ import petroleum.Posto;
 public class Main {
 
     public static void main(String[] args) {
-        //DONE criar a central requerida
         //DONE criar os postos
-        //DONE criar as listas postos
         Posto p1 = new Posto(1, "Minas Tirith", new Point(1400, 990), 2200, 10000, 40000);
         Posto p2 = new Posto(2, "Isengard", new Point(925, 710), 3200, 7000, 30000);
         Posto p3 = new Posto(3, "Dol Guldur", new Point(1235, 510), 2300, 17000, 30000);
@@ -30,18 +28,17 @@ public class Main {
         Posto p13 = new Posto(13, "Linhir", new Point(1110, 1180), 1900, 5000, 30000);
         Posto p14 = new Posto(14, "Dom Beornd", new Point(1090, 240), 1600, 5000, 30000);
         Posto p15 = new Posto(15, "Harlond", new Point(175, 400), 2000, 8000, 30000);
-        Posto p16 = new Posto(16, "Oliveira do Hospital", new Point(1600, 123), 1000, 10000, 30000);
-        Posto p17 = new Posto(17, "Caldas da Rainha", new Point(700, 124), 1324, 12000, 25000);
-        Posto p18 = new Posto(18, "Castelo Branco", new Point(1753, 1200), 2100, 23000, 26000);
-        Posto p19 = new Posto(19, "Alcains", new Point(1100, 1294), 2130, 2134, 4212);
-        Posto p20 = new Posto(20, "Idanha", new Point(873, 210), 2312, 2345, 1234);
-        //DONE criar os camiões
-        //DONE criar lista camioes
+        Posto p16 = new Posto(16, "Olive tree from the Hospital", new Point(1600, 123), 1000, 10000, 40000);
+        Posto p17 = new Posto(17, "Queen of the Caldas", new Point(700, 124), 1324, 12000, 39000);
+        Posto p18 = new Posto(18, "Castle White", new Point(1753, 1200), 2100, 23000, 26000);
+        Posto p19 = new Posto(19, "Alcães", new Point(1100, 1294), 2130, 2134, 15000);
+        Posto p20 = new Posto(20, "Burba", new Point(873, 210), 2312, 2345, 35000);
+
         Camiao camiao1 = new Camiao("11-FG-33", 20000, 65, 20);
         Camiao camiao2 = new Camiao("22-DV-22", 30000, 50, 30);
         Camiao camiao3 = new Camiao("AA-34-BB", 35000, 70, 30);
         Camiao camiao4 = new Camiao("CF-65-FC", 40000, 45, 40);
-        Camiao camiao5 = new Camiao("AZ-75-PO", 25000, 55, 50);
+        Camiao camiao5 = new Camiao("AM-45-SO", 25000, 55, 50);
 
         Central c= new Central( new Point(505, 750) );
 
@@ -72,7 +69,6 @@ public class Main {
         c.addCamiao(camiao4);
         c.addCamiao(camiao5);
 
-        //DONE criar a apresentar a janela principal
         JanelaControlo postosFrame = new JanelaControlo(c);
         postosFrame.setVisible(true);
     }

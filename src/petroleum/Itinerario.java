@@ -11,15 +11,17 @@ import java.util.List;
  */
 public class Itinerario {
 
-	private List<Paragem> paragens;
-	private Point pontoPartida;
+	private List<Paragem> paragens; //variável de instância que guarda as paragens
+	private Point pontoPartida; //variável de instância que guarda o ponto de partida
 
+	//Construtor do itinerário
 	public Itinerario (Point pontoPartida){
 
 		this.paragens=new ArrayList<>();
 		this.pontoPartida=pontoPartida;
 	}
 
+	//Método que adiciona uma paragem ao itinerário
 	public void adicionaParagem(Posto posto,int litrosParaDepositar){
 
 		Paragem paragem= new Paragem(posto,litrosParaDepositar);
@@ -29,6 +31,7 @@ public class Itinerario {
 	public int tamanho(){
 		return paragens.size();
 	}
+
 
 	public Point getPontoPartida() {
 		return pontoPartida;

@@ -1,0 +1,80 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"54ce9548-5f8e-42ac-965e-e1f14623c052\" name=\"Changes\" comment=\"janela de controlo feita\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_16_32__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_16_32__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/petroleum/Central.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/petroleum/Central.java\" afterDir=\"false\" />\r\n    </list>\r\n    <list id=\"fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e\" name=\"Changes by Diogo_Santos\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/petroleum/Camiao.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/petroleum/Camiao.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/petroleum/Central.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/petroleum/Central.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Didass7&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/Didass7/IP2Trabalho.git&quot;,\r\n    &quot;accountId&quot;: &quot;6fdabb10-5ec8-4114-bd97-e47100f297cd&quot;\r\n  }\r\n}</component>\r\n  <component name=\"LineStatusTrackerManager\">\r\n    <file path=\"$PROJECT_DIR$/src/petroleum/Central.java\">\r\n      <ranges>\r\n        <range start1=\"14\" end1=\"15\" start2=\"14\" end2=\"15\" changelist=\"54ce9548-5f8e-42ac-965e-e1f14623c052\" />\r\n        <range start1=\"29\" end1=\"33\" start2=\"29\" end2=\"29\" changelist=\"54ce9548-5f8e-42ac-965e-e1f14623c052\" />\r\n        <range start1=\"38\" end1=\"40\" start2=\"34\" end2=\"36\" changelist=\"54ce9548-5f8e-42ac-965e-e1f14623c052\" />\r\n        <range start1=\"41\" end1=\"42\" start2=\"37\" end2=\"37\" changelist=\"54ce9548-5f8e-42ac-965e-e1f14623c052\" />\r\n        <range start1=\"47\" end1=\"49\" start2=\"42\" end2=\"44\" changelist=\"54ce9548-5f8e-42ac-965e-e1f14623c052\" />\r\n        <range start1=\"50\" end1=\"50\" start2=\"45\" end2=\"50\" changelist=\"54ce9548-5f8e-42ac-965e-e1f14623c052\" />\r\n        <range start1=\"112\" end1=\"112\" start2=\"112\" end2=\"113\" changelist=\"fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e\" />\r\n        <range start1=\"113\" end1=\"124\" start2=\"114\" end2=\"117\" changelist=\"fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e\" />\r\n        <range start1=\"126\" end1=\"128\" start2=\"119\" end2=\"122\" changelist=\"fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e\" />\r\n        <range start1=\"129\" end1=\"129\" start2=\"123\" end2=\"124\" changelist=\"fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e\" />\r\n        <range start1=\"130\" end1=\"133\" start2=\"125\" end2=\"130\" changelist=\"fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e\" />\r\n        <range start1=\"134\" end1=\"134\" start2=\"131\" end2=\"132\" changelist=\"fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e\" />\r\n      </ranges>\r\n    </file>\r\n  </component>\r\n  <component name=\"ProjectCodeStyleSettingsMigration\">\r\n    <option name=\"version\" value=\"2\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2edtj2TbnmkuMuqrVlrPnwwCTvS\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.Main.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\diogo\\IdeaProjects\\IP2Trabalho\\src\" />\r\n      <recent name=\"C:\\Users\\diogo\\IdeaProjects\\IP2Projeto\" />\r\n      <recent name=\"C:\\Users\\diogo\\IdeaProjects\\IP2Projeto\\src\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"54ce9548-5f8e-42ac-965e-e1f14623c052\" name=\"Changes\" comment=\"\" />\r\n      <created>1712246415900</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1712246415900</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"janela de controlo feita\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713314050517</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713314050517</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"janela de controlo feita\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"janela de controlo feita\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 85ad9d4f10805dc5588dd90f75d36859b7edabc6)
++++ b/.idea/workspace.xml	(date 1713397969954)
+@@ -4,15 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="54ce9548-5f8e-42ac-965e-e1f14623c052" name="Changes" comment="janela de controlo feita">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_16_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_04_2024_16_32__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/petroleum/Central.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Central.java" afterDir="false" />
+-    </list>
+-    <list id="fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e" name="Changes by Diogo_Santos" comment="">
+-      <change beforePath="$PROJECT_DIR$/src/petroleum/Camiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Camiao.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/petroleum/Central.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/petroleum/Central.java" afterDir="false" />
+-    </list>
++    <list default="true" id="54ce9548-5f8e-42ac-965e-e1f14623c052" name="Changes" comment="ultimas tentativas do dia" />
++    <list id="fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e" name="Changes by Diogo_Santos" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -33,24 +26,6 @@
+     &quot;accountId&quot;: &quot;6fdabb10-5ec8-4114-bd97-e47100f297cd&quot;
+   }
+ }</component>
+-  <component name="LineStatusTrackerManager">
+-    <file path="$PROJECT_DIR$/src/petroleum/Central.java">
+-      <ranges>
+-        <range start1="14" end1="15" start2="14" end2="15" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
+-        <range start1="29" end1="33" start2="29" end2="29" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
+-        <range start1="38" end1="40" start2="34" end2="36" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
+-        <range start1="41" end1="42" start2="37" end2="37" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
+-        <range start1="47" end1="49" start2="42" end2="44" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
+-        <range start1="50" end1="50" start2="45" end2="50" changelist="54ce9548-5f8e-42ac-965e-e1f14623c052" />
+-        <range start1="112" end1="112" start2="112" end2="113" changelist="fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e" />
+-        <range start1="113" end1="124" start2="114" end2="117" changelist="fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e" />
+-        <range start1="126" end1="128" start2="119" end2="122" changelist="fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e" />
+-        <range start1="129" end1="129" start2="123" end2="124" changelist="fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e" />
+-        <range start1="130" end1="133" start2="125" end2="130" changelist="fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e" />
+-        <range start1="134" end1="134" start2="131" end2="132" changelist="fb4b6c6e-2c38-4aac-beed-ea5c4d61df7e" />
+-      </ranges>
+-    </file>
+-  </component>
+   <component name="ProjectCodeStyleSettingsMigration">
+     <option name="version" value="2" />
+   </component>
+@@ -97,7 +72,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1713314050517</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="ultimas tentativas do dia">
++      <option name="closed" value="true" />
++      <created>1713397948510</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1713397948510</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -113,6 +96,7 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="janela de controlo feita" />
+-    <option name="LAST_COMMIT_MESSAGE" value="janela de controlo feita" />
++    <MESSAGE value="ultimas tentativas do dia" />
++    <option name="LAST_COMMIT_MESSAGE" value="ultimas tentativas do dia" />
+   </component>
+ </project>
+\ No newline at end of file

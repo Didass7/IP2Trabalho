@@ -99,17 +99,17 @@ public class Posto {
 
         // Verificar se o posto tem capacidade para armazenar os litros indicados
 
-            // Verificar se a ocupação do posto é suficiente para aceitar novos pedidos de abastecimento
-            if (percentagemOcupacao() >= OCUPACAO_SUFICIENTE) {
-                return Central.POSTO_NAO_PRECISA; // O pedido foi adicionado ao camião
-            } else if (capacidadeLivre()<nLitros) {
+        // Verificar se a ocupação do posto é suficiente para aceitar novos pedidos de abastecimento
+        if (percentagemOcupacao() >= OCUPACAO_SUFICIENTE) {
+            return Central.POSTO_NAO_PRECISA; // O pedido foi adicionado ao camião
+        } else if (capacidadeLivre() < nLitros) {
 
-                return Central.EXCEDE_CAPACIDADE_POSTO; // O posto não necessita de ser abastecido no momento
-            }
-            quantidadeAtual += nLitros;
-            return Central.ACEITE; // O posto não tem capacidade de armazenar os litros indicados
-
+            return Central.EXCEDE_CAPACIDADE_POSTO; // O posto não necessita de ser abastecido no momento
         }
+        quantidadeAtual += nLitros;
+        return Central.ACEITE; // O posto não tem capacidade de armazenar os litros indicados
+
+    }
 
 
     /* retorna a capacidade livre, isto é, quantos
@@ -133,8 +133,8 @@ public class Posto {
      * @return true, se tiver um pedido
      */
     public boolean temPedidoPendente() {
-        // FEITO! fazer este método
-        //Pode ser necessario alterar alguma cena para nao dar cana
+        // FEITinho! fazer este método :D
+
         return pedidoPendente;
     }
 
@@ -146,23 +146,24 @@ public class Posto {
         // FEITO! fazer este método
 
         int debitoTotal = 0;
-
         if (debitoTotal > capacidadeMaximaCombus * OCUPACAO_SUFICIENTE) {
             pedidoPendente = true;
-        } else {
-            pedidoPendente = false;
         }
 
-        if (percentagemOcupacao()  < OCUPACAO_MINIMA ) {
+        if (percentagemOcupacao() < OCUPACAO_MINIMA) {
             pedidoPendente = true;
-
-            //Resolver este problema do Math.Random()
-        } else if ((percentagemOcupacao()> OCUPACAO_MINIMA)&&(percentagemOcupacao() < OCUPACAO_SUFICIENTE)) {
-            if (Math.random()<0.1) {
+        } else if (percentagemOcupacao() < OCUPACAO_SUFICIENTE) {
+            if (Math.random() < 0.1) {
                 pedidoPendente = true;
             }
-            pedidoPendente = true;
+        }
+
+        // Realiza a verificação se precisa de fazer um pedido de abastecimento
+        if (pedidoPendente) {
+            // Calcula a quantidade de combustível que o posto precisa para atingir a capacidade máxima
+            int quantidadeNecessaria = (capacidadeMaximaCombus - (quantidadeAtual - gastoDiarioMedioCombus));
+            // Faz um pedido para encher o posto até a capacidade máxima
+            enche(quantidadeNecessaria);
         }
     }
 }
-

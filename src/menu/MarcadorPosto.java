@@ -94,10 +94,11 @@ public class MarcadorPosto {
 		}
 
 		icon.paintIcon(null, g, area.x, area.y);
-		
+
 		// FEITO! ver se posto tem pedido pendente
-		if(false )
+		if (false)
 			pedindo.paintIcon(null, g, area.x, area.y);
+
 	}
 	
 	/** define se o marcador deve ser visto expandido ou compacto 
