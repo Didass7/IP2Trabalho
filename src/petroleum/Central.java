@@ -24,18 +24,6 @@ public class Central {
 		return posicao;
 	}
 
-	public void setPosicao(Point posicao) {
-		this.posicao = posicao;
-	}
-
-	public void removePosto(Posto posto) {
-		this.postos.remove(posto);
-	}
-
-	public void removeCamiao(Camiao camiao) {
-		this.camioes.remove(camiao);
-	}
-
 	public void addCamiao(Camiao camiao) {
 		this.camioes.add(camiao);
 	}
@@ -70,7 +58,6 @@ public class Central {
 	 * @return o camião com a matrícula indicada, ou null se não existir
 	 */
 	public Camiao getCamiao(String matricula ) {
-		// FEITO! fazer este método
 		if(camioes!=null) {
 			for (Camiao camiao : camioes) {
 				if (camiao.getMatricula().equals(matricula)) {
@@ -87,7 +74,6 @@ public class Central {
 	 * @return o posto com o id, ou null se não existir
 	 */
 	public Posto getPosto( int id ) {
-		// FEITO! fazer este método
 			for (Posto posto: postos){
 				if (posto.getCodigoNumerico()==id){
 					return posto;
@@ -111,22 +97,6 @@ public class Central {
 
 	public int processarEntrega(Posto posto, int litros, Camiao camiao) {
 
-		/*System.out.println(posto.temPedidoPendente());
-		if (posto.temPedidoPendente()) {
-			return ACEITE;
-		}
-		// Verifica se o posto tem capacidade para armazenar os litros indicados
-		if (litros > posto.capacidadeLivre()) {
-			return EXCEDE_CAPACIDADE_POSTO;
-		}
-		int adicionaPostoItinerario = camiao.addPosto(posto, litros);
-		if (adicionaPostoItinerario == ACEITE) {
-			// Atualiza a quantidade de combustível do posto
-			posto.setQuantidadeAtual(posto.getQuantidadeAtual() + litros);
-		}
-		return adicionaPostoItinerario;
-	}
-*/
 		if (litros > camiao.capacidadeLivre()) {
 			return EXCEDE_CAPACIDADE_CAMIAO;
 		}
@@ -143,9 +113,7 @@ public class Central {
 		return ACEITE;
 	}
 
-
-
-	/* finaliza um turno, isto é, realiza os itinerários e
+	/** finaliza um turno, isto é, realiza os itinerários e
 	 * processa os gastos dos postos 
 	 */
 	public void finalizarTurno() {
@@ -160,24 +128,22 @@ public class Central {
 		for(Camiao camiao: camioes){
 			camiao.transporta();
 		}
-		// DONE fazer este método
 	}
 	
 	/** processa os gastos dos postos
 	 */
 	private void processarGastosPostos() {
-		// TODO fazer este método
+
 		for (Posto posto : postos) {
-			// Deduz o consumo diário da quantidade atual de combustível
 			int quantidadeCombustivelAtual = posto.getQuantidadeAtual();
 			quantidadeCombustivelAtual -= posto.getGastoDiarioMedioCombus();
 
-			// Certifica-se de que a quantidade atual não seja negativa
+
 			if (quantidadeCombustivelAtual < 0) {
 				quantidadeCombustivelAtual = 0;
 			}
 
-			// Atualiza a quantidade atual de combustível do posto
+
 			posto.setQuantidadeAtual(quantidadeCombustivelAtual);
 		}
 	}

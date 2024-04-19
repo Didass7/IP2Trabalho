@@ -3,7 +3,6 @@ package petroleum;
 import java.awt.*;
 
 
-
 /* Um posto do sistema. Um posto deve ter uma capacidade
  * máxima de combustível, assim como a quantidade de combustível que tem.
  * Para simular o uso do posto assume-se que ele tem num gasto médio diário,
@@ -48,26 +47,6 @@ public class Posto {
         this.quantidadeAtual = quantidadeAtual;
     }
 
-    public void setLocalizacao(Point localizacao) {
-        this.localizacao = localizacao;
-    }
-
-    public void setCodigoNumerico(int codigoNumerico) {
-        this.codigoNumerico = codigoNumerico;
-    }
-
-    public void setGastoDiarioMedioCombus(int gastoDiarioMedioCombus) {
-        this.gastoDiarioMedioCombus = gastoDiarioMedioCombus;
-    }
-
-    public void setCapacidadeMaximaCombus(int capacidadeMaximaCombus) {
-        this.capacidadeMaximaCombus = capacidadeMaximaCombus;
-    }
-
-    public void setNomeDoPosto(String nomeDoPosto) {
-        this.nomeDoPosto = nomeDoPosto;
-    }
-
     public Posto(int codigoNumerico, String nomeDoPosto, Point localizacao, int gastoDiarioMedioCombus, int quantidadeAtual, int capacidadeMaximaCombus) {
         this.codigoNumerico = codigoNumerico;
         this.nomeDoPosto = nomeDoPosto;
@@ -88,36 +67,32 @@ public class Posto {
      * posto precisa de fazer um pedido */
     public static final double OCUPACAO_MINIMA = 0.25;
 
-    /* transferência de combústivel para o posto
+    /**
+     * Transferência de combústivel para o posto
+     *
      * @param nLitros litros a transferir
      * @return ACEITE, o pedido foi adicionado ao camião<br>
-     *         POSTO_NAO_PRECISA, se o posto não necessita de ser abastecido
-     *         EXCEDE_CAPACIDADE_POSTO, se o posto não tem capacidade de armazenar os litros indicados
+     * POSTO_NAO_PRECISA, se o posto não necessita de ser abastecido
+     * EXCEDE_CAPACIDADE_POSTO, se o posto não tem capacidade de armazenar os litros indicados
      */
     public int enche(int nLitros) {
-        // FEITO! fazer este método
 
-        // Verificar se o posto tem capacidade para armazenar os litros indicados
-
-        // Verificar se a ocupação do posto é suficiente para aceitar novos pedidos de abastecimento
         if (percentagemOcupacao() >= OCUPACAO_SUFICIENTE) {
-            return Central.POSTO_NAO_PRECISA; // O pedido foi adicionado ao camião
+            return Central.POSTO_NAO_PRECISA;
         } else if (capacidadeLivre() < nLitros) {
 
-            return Central.EXCEDE_CAPACIDADE_POSTO; // O posto não necessita de ser abastecido no momento
+            return Central.EXCEDE_CAPACIDADE_POSTO;
         }
         quantidadeAtual += nLitros;
-        return Central.ACEITE; // O posto não tem capacidade de armazenar os litros indicados
+        return Central.ACEITE;
 
     }
-
 
     /* retorna a capacidade livre, isto é, quantos
      * litros ainda podem ser armazenados no posto
      * @return a capacidade livre
      */
     public int capacidadeLivre() {
-        // FEITO! fazer este método
         return getCapacidadeMaximaCombus() - getQuantidadeAtual();
     }
 
@@ -125,16 +100,14 @@ public class Posto {
      * @return a percentagem de ocupação do posto
      */
     public float percentagemOcupacao() {
-        // FEITO! fazer este método
         return (float) getQuantidadeAtual() / getCapacidadeMaximaCombus();
     }
+
 
     /* indica se o posto tem um pedido pendente
      * @return true, se tiver um pedido
      */
     public boolean temPedidoPendente() {
-        // FEITinho! fazer este método :D
-
         return pedidoPendente;
     }
 
@@ -142,9 +115,6 @@ public class Posto {
      * se precisa de realizar um pedido de abastecimento
      */
     public void laborar() {
-
-        // FEITO! fazer este método
-
         int debitoTotal = 0;
         if (debitoTotal > capacidadeMaximaCombus * OCUPACAO_SUFICIENTE) {
             pedidoPendente = true;
@@ -157,12 +127,8 @@ public class Posto {
                 pedidoPendente = true;
             }
         }
-
-        // Realiza a verificação se precisa de fazer um pedido de abastecimento
         if (pedidoPendente) {
-            // Calcula a quantidade de combustível que o posto precisa para atingir a capacidade máxima
             int quantidadeNecessaria = (capacidadeMaximaCombus - (quantidadeAtual - gastoDiarioMedioCombus));
-            // Faz um pedido para encher o posto até a capacidade máxima
             enche(quantidadeNecessaria);
         }
     }
